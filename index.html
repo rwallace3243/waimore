@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>WaiMore™ — Do more with AI. Together.</title>
-<meta name="description" content="WaiMore™ is the community where you sharpen real AI skill through challenges, teams, and quests. Join today.">
+<title>WaiMore™ — Start where you are. Build where you want to go.</title>
+<meta name="description" content="WaiMore™ is the S4 community where you assess your AI fluency, learn with Coach Luma, build on real solution Quests, and prove what you can do.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Spline+Sans:wght@400;500;600&family=Spline+Sans+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -27,11 +27,8 @@
   html{scroll-behavior:smooth}
   body{
     font-family:'Spline Sans',system-ui,sans-serif;
-    background:var(--paper);
-    color:var(--ink);
-    line-height:1.6;
-    min-height:100vh;
-    display:flex;flex-direction:column;
+    background:var(--paper);color:var(--ink);line-height:1.6;
+    min-height:100vh;display:flex;flex-direction:column;
   }
   h1,h2,h3{font-family:'Bricolage Grotesque',sans-serif;line-height:1.12;letter-spacing:-.01em}
   .mono{font-family:'Spline Sans Mono',monospace}
@@ -40,30 +37,17 @@
   :focus-visible{outline:3px solid var(--marigold);outline-offset:2px;border-radius:4px}
 
   /* ---------- Header ---------- */
-  header{
-    display:flex;align-items:center;justify-content:space-between;
-    padding:18px 28px;border-bottom:1px solid var(--line);background:var(--paper);
-  }
+  header{display:flex;align-items:center;justify-content:space-between;padding:18px 28px;border-bottom:1px solid var(--line);background:var(--paper)}
   .logo{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:1.45rem;letter-spacing:-.02em;cursor:pointer;background:none;border:none;color:var(--ink)}
   .logo .ai{color:var(--jade)}
   .logo sup{font-size:.55em;font-weight:600;color:var(--ink-soft)}
   .header-actions{display:flex;gap:10px;align-items:center}
-  .demo-flag{
-    font-family:'Spline Sans Mono',monospace;font-size:.7rem;letter-spacing:.08em;
-    background:var(--ink);color:var(--marigold);padding:4px 10px;border-radius:999px;
-  }
+  .demo-flag{font-family:'Spline Sans Mono',monospace;font-size:.7rem;letter-spacing:.08em;background:var(--ink);color:var(--marigold);padding:4px 10px;border-radius:999px}
 
-  /* ---------- Journey rail (signature element) ---------- */
-  .journey{
-    display:flex;justify-content:center;gap:0;
-    padding:14px 16px 10px;border-bottom:1px solid var(--line);background:var(--card);
-  }
+  /* ---------- Journey rail ---------- */
+  .journey{display:flex;justify-content:center;padding:14px 16px 10px;border-bottom:1px solid var(--line);background:var(--card)}
   .j-step{display:flex;align-items:center;gap:8px}
-  .j-dot{
-    width:12px;height:12px;border-radius:50%;
-    border:2px solid var(--line);background:var(--card);
-    transition:background .3s,border-color .3s;
-  }
+  .j-dot{width:12px;height:12px;border-radius:50%;border:2px solid var(--line);background:var(--card);transition:background .3s,border-color .3s}
   .j-label{font-family:'Spline Sans Mono',monospace;font-size:.68rem;letter-spacing:.07em;text-transform:uppercase;color:var(--ink-soft)}
   .j-line{width:56px;height:2px;background:var(--line);margin:0 10px;transition:background .3s}
   .j-step.done .j-dot{background:var(--jade);border-color:var(--jade)}
@@ -73,21 +57,14 @@
   @media(max-width:560px){.j-line{width:22px;margin:0 5px}.j-label{display:none}.j-step.here .j-label{display:inline}}
 
   /* ---------- Layout ---------- */
-  main{flex:1;width:100%;max-width:1060px;margin:0 auto;padding:40px 24px 72px}
+  main{flex:1;width:100%;max-width:1120px;margin:0 auto;padding:40px 24px 72px}
   .view{display:none;animation:rise .45s ease both}
   .view.active{display:block}
   @keyframes rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
-  @media (prefers-reduced-motion:reduce){
-    .view{animation:none}
-    html{scroll-behavior:auto}
-  }
+  @media (prefers-reduced-motion:reduce){.view{animation:none}html{scroll-behavior:auto}}
 
   /* ---------- Buttons ---------- */
-  .btn{
-    display:inline-block;border:none;border-radius:999px;
-    padding:14px 30px;font-weight:600;font-size:1rem;
-    transition:transform .12s,box-shadow .12s;text-decoration:none;
-  }
+  .btn{display:inline-block;border:none;border-radius:999px;padding:14px 30px;font-weight:600;font-size:1rem;transition:transform .12s;text-decoration:none}
   .btn:active{transform:scale(.98)}
   .btn-primary{background:var(--marigold);color:var(--ink);box-shadow:0 4px 14px rgba(232,154,0,.35)}
   .btn-primary:hover{background:var(--marigold-deep)}
@@ -95,59 +72,93 @@
   .btn-ghost:hover{background:var(--ink);color:var(--paper)}
   .btn-wide{width:100%;text-align:center}
   .btn-quiet{background:none;border:none;color:var(--ink-soft);text-decoration:underline;font-size:.9rem}
+  .btn-sm{padding:9px 20px;font-size:.88rem}
 
-  /* ---------- Landing ---------- */
-  .hero{padding:44px 0 30px;max-width:720px}
+  /* ---------- Landing hero ---------- */
+  .hero{padding:44px 0 26px;max-width:760px}
   .eyebrow{font-family:'Spline Sans Mono',monospace;font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:var(--jade);margin-bottom:14px}
-  .hero h1{font-size:clamp(2.4rem,6vw,4.1rem);font-weight:800;margin-bottom:20px}
+  .hero h1{font-size:clamp(2.3rem,6vw,4rem);font-weight:800;margin-bottom:18px}
   .hero h1 em{font-style:normal;color:var(--jade)}
-  .hero p{font-size:1.15rem;color:var(--ink-soft);max-width:560px;margin-bottom:30px}
+  .hero p{font-size:1.15rem;color:var(--ink-soft);max-width:640px;margin-bottom:28px}
   .hero-cta{display:flex;gap:14px;flex-wrap:wrap}
 
-  .how{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin:52px 0}
-  .how-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:24px}
-  .how-card h3{font-size:1.1rem;margin-bottom:8px}
-  .how-card p{font-size:.94rem;color:var(--ink-soft)}
-  .how-tag{font-family:'Spline Sans Mono',monospace;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--marigold-deep);display:block;margin-bottom:10px}
+  .section-head{margin:64px 0 8px}
+  .section-head h2{font-size:clamp(1.6rem,3.4vw,2.2rem)}
+  .section-sub{color:var(--ink-soft);max-width:640px;margin-bottom:26px}
 
-  .price-band{
-    background:var(--ink);color:var(--paper);border-radius:var(--radius);
-    padding:38px 34px;display:flex;flex-wrap:wrap;gap:26px;align-items:center;justify-content:space-between;
-    box-shadow:var(--shadow);
-  }
-  .price-band h2{font-size:1.7rem;margin-bottom:6px}
-  .price-band .sub{color:#B8CDC7;font-size:.98rem;max-width:420px}
-  .price-tag{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:2.6rem;white-space:nowrap}
-  .price-tag span{font-size:1rem;font-weight:400;color:#B8CDC7}
+  /* ---------- Mechanism (Assess→Advance) ---------- */
+  .mech{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px}
+  .mech-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:20px 18px;position:relative}
+  .mech-num{font-family:'Spline Sans Mono',monospace;font-size:.7rem;letter-spacing:.1em;color:var(--marigold-deep);display:block;margin-bottom:8px}
+  .mech-card h3{font-size:1.05rem;margin-bottom:6px}
+  .mech-card p{font-size:.87rem;color:var(--ink-soft)}
+  .badge-ladder{margin-top:18px;font-size:.85rem;color:var(--ink-soft)}
+  .badge-ladder .mono{color:var(--jade);font-size:.78rem}
 
-  /* ---------- Forms ---------- */
-  .panel{
-    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
-    box-shadow:var(--shadow);max-width:460px;margin:0 auto;padding:36px 34px;
-  }
+  /* ---------- Flywheel ---------- */
+  .flywheel{background:var(--ink);color:var(--paper);border-radius:var(--radius);padding:36px 34px;box-shadow:var(--shadow)}
+  .flywheel h2{font-size:1.6rem;margin-bottom:8px}
+  .flywheel .lead{color:#B8CDC7;max-width:640px;margin-bottom:22px}
+  .fly-steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px}
+  .fly-step{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:10px;padding:16px}
+  .fly-step .mono{color:var(--marigold);font-size:.68rem;letter-spacing:.1em;display:block;margin-bottom:6px}
+  .fly-step p{font-size:.85rem;color:#DCE9E5}
+  .fly-note{margin-top:18px;font-size:.85rem;color:#B8CDC7}
+  .fly-note b{color:var(--marigold)}
+
+  /* ---------- Tier ladder ---------- */
+  .tiers{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;align-items:stretch}
+  .tier-card{background:var(--card);border:1.5px solid var(--line);border-radius:var(--radius);padding:24px 22px;display:flex;flex-direction:column;position:relative}
+  .tier-card.featured{border-color:var(--jade);box-shadow:var(--shadow)}
+  .tier-flag{position:absolute;top:-11px;left:20px;background:var(--jade);color:#fff;font-family:'Spline Sans Mono',monospace;font-size:.62rem;letter-spacing:.1em;padding:3px 10px;border-radius:999px}
+  .tier-card h3{font-size:1.15rem;margin-bottom:2px}
+  .tier-promise{font-size:.82rem;color:var(--jade);font-weight:600;margin-bottom:12px}
+  .tier-price{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:1.9rem}
+  .tier-price span{font-size:.85rem;font-weight:400;color:var(--ink-soft)}
+  .founding{display:inline-block;margin:6px 0 14px;font-family:'Spline Sans Mono',monospace;font-size:.7rem;letter-spacing:.05em;color:var(--marigold-deep);border:1px dashed var(--marigold-deep);border-radius:999px;padding:3px 10px}
+  .tier-feats{list-style:none;font-size:.86rem;color:var(--ink-soft);margin-bottom:18px;flex:1}
+  .tier-feats li{padding:4px 0 4px 20px;position:relative}
+  .tier-feats li::before{content:'✓';position:absolute;left:0;color:var(--jade);font-weight:700}
+  .premium-band{margin-top:16px;background:var(--card);border:1.5px solid var(--line);border-radius:var(--radius);padding:22px 26px;display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;align-items:center}
+  .premium-band h3{font-size:1.05rem}
+  .premium-band p{font-size:.86rem;color:var(--ink-soft);max-width:560px}
+  .premium-band .tier-price{font-size:1.3rem;white-space:nowrap}
+
+  /* ---------- Tier explorer ---------- */
+  .exp-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
+  .exp-tab{border:1.5px solid var(--line);background:var(--card);border-radius:999px;padding:9px 20px;font-weight:600;font-size:.9rem;color:var(--ink-soft)}
+  .exp-tab.on{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+  .exp-panel{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:26px;box-shadow:var(--shadow)}
+  .exp-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+  .exp-col h4{font-family:'Spline Sans Mono',monospace;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--marigold-deep);margin-bottom:10px}
+  .exp-col ul{list-style:none;font-size:.88rem;color:var(--ink-soft)}
+  .exp-col li{padding:4px 0 4px 16px;position:relative}
+  .exp-col li::before{content:'—';position:absolute;left:0;color:var(--jade)}
+  .exp-cta{margin-top:22px;display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+  .exp-upnote{font-size:.84rem;color:var(--ink-soft);font-style:italic}
+
+  /* ---------- Add-ons ---------- */
+  .addons{display:flex;flex-wrap:wrap;gap:10px}
+  .addon{font-family:'Spline Sans Mono',monospace;font-size:.78rem;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:8px 16px;color:var(--ink-soft)}
+  .addon b{color:var(--ink)}
+
+  /* ---------- Panels / forms ---------- */
+  .panel{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);max-width:460px;margin:0 auto;padding:36px 34px}
   .panel h2{font-size:1.7rem;margin-bottom:6px}
   .panel .lead{color:var(--ink-soft);font-size:.95rem;margin-bottom:24px}
+  .tier-chip{display:flex;justify-content:space-between;align-items:center;background:var(--jade-soft);border:1px solid var(--jade);border-radius:10px;padding:10px 14px;margin-bottom:20px;font-size:.9rem}
+  .tier-chip b{color:var(--jade)}
   .field{margin-bottom:18px}
   label{display:block;font-weight:600;font-size:.88rem;margin-bottom:6px}
-  input{
-    width:100%;padding:12px 14px;border:1.5px solid var(--line);border-radius:10px;
-    font:inherit;background:var(--paper);color:var(--ink);
-  }
+  input{width:100%;padding:12px 14px;border:1.5px solid var(--line);border-radius:10px;font:inherit;background:var(--paper);color:var(--ink)}
   input:focus{border-color:var(--jade);outline:none;background:#fff}
   .hint{font-size:.78rem;color:var(--ink-soft);margin-top:4px}
-  .form-error{
-    display:none;background:#FBEAE6;color:var(--danger);border:1px solid #EFC4BB;
-    border-radius:10px;padding:10px 14px;font-size:.88rem;margin-bottom:16px;
-  }
+  .form-error{display:none;background:#FBEAE6;color:var(--danger);border:1px solid #EFC4BB;border-radius:10px;padding:10px 14px;font-size:.88rem;margin-bottom:16px}
   .form-error.show{display:block}
   .swap-link{text-align:center;margin-top:18px;font-size:.9rem;color:var(--ink-soft)}
 
   /* ---------- Checkout ---------- */
-  .sim-badge{
-    display:flex;align-items:center;gap:10px;
-    background:var(--jade-soft);border:1.5px dashed var(--jade);border-radius:10px;
-    padding:10px 14px;margin-bottom:22px;font-size:.85rem;color:var(--ink);
-  }
+  .sim-badge{display:flex;align-items:center;gap:10px;background:var(--jade-soft);border:1.5px dashed var(--jade);border-radius:10px;padding:10px 14px;margin-bottom:22px;font-size:.85rem}
   .sim-badge .mono{color:var(--jade);font-size:.7rem;letter-spacing:.08em;font-weight:500}
   .order-line{display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--line);font-size:.95rem}
   .order-line.total{font-weight:700;border-bottom:none;font-size:1.05rem}
@@ -155,31 +166,27 @@
   .card-row .field{flex:1}
 
   /* ---------- Dashboard ---------- */
-  .dash-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:14px;margin-bottom:28px}
+  .dash-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:14px;margin-bottom:26px}
   .dash-head h2{font-size:2rem}
-  .status-chip{
-    display:inline-flex;align-items:center;gap:8px;background:var(--jade-soft);color:var(--jade);
-    font-weight:600;font-size:.85rem;border-radius:999px;padding:7px 16px;
-  }
+  .status-chip{display:inline-flex;align-items:center;gap:8px;background:var(--jade-soft);color:var(--jade);font-weight:600;font-size:.85rem;border-radius:999px;padding:7px 16px}
   .status-chip::before{content:'';width:8px;height:8px;border-radius:50%;background:var(--jade)}
-  .dash-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
-  .dash-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:24px}
-  .dash-card h3{font-size:1rem;margin-bottom:10px}
-  .dash-card .big{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:1.5rem}
-  .dash-card p{font-size:.9rem;color:var(--ink-soft)}
-  .soon{opacity:.65}
-  .soon-tag{font-family:'Spline Sans Mono',monospace;font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:3px 10px;color:var(--ink-soft);float:right}
+  .dash-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+  .dash-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px}
+  .dash-card h3{font-size:1rem;margin-bottom:8px}
+  .dash-card .big{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:1.4rem}
+  .dash-card p{font-size:.88rem;color:var(--ink-soft)}
+  .space-tag{font-family:'Spline Sans Mono',monospace;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;border-radius:999px;padding:3px 10px;float:right}
+  .tag-open{background:var(--jade-soft);color:var(--jade)}
+  .tag-lock{background:var(--paper);border:1px solid var(--line);color:var(--ink-soft)}
+  .dash-card.locked{opacity:.72;border-style:dashed}
+  .dash-card.locked h3{color:var(--ink-soft)}
+  .up-btn{margin-top:10px;background:none;border:1.5px solid var(--marigold-deep);color:var(--marigold-deep);border-radius:999px;padding:6px 16px;font-size:.8rem;font-weight:600}
+  .up-btn:hover{background:var(--marigold);border-color:var(--marigold);color:var(--ink)}
+  .dash-section{font-family:'Spline Sans Mono',monospace;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);margin:28px 0 12px}
 
-  /* ---------- Footer ---------- */
-  footer{
-    border-top:1px solid var(--line);padding:22px 28px;display:flex;flex-wrap:wrap;gap:12px;
-    justify-content:space-between;align-items:center;font-size:.8rem;color:var(--ink-soft);
-  }
-  .toast{
-    position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(80px);
-    background:var(--ink);color:var(--paper);padding:12px 22px;border-radius:999px;
-    font-size:.9rem;opacity:0;transition:transform .3s,opacity .3s;pointer-events:none;z-index:50;
-  }
+  /* ---------- Footer / toast ---------- */
+  footer{border-top:1px solid var(--line);padding:22px 28px;display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:center;font-size:.8rem;color:var(--ink-soft)}
+  .toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(80px);background:var(--ink);color:var(--paper);padding:12px 22px;border-radius:999px;font-size:.9rem;opacity:0;transition:transform .3s,opacity .3s;pointer-events:none;z-index:50}
   .toast.show{transform:translateX(-50%) translateY(0);opacity:1}
 </style>
 </head>
@@ -188,12 +195,11 @@
 <header>
   <button class="logo" onclick="go('landing')">W<span class="ai">ai</span>More<sup>™</sup></button>
   <div class="header-actions">
-    <span class="demo-flag">DEMO #1</span>
-    <button class="btn btn-ghost" id="nav-auth" onclick="go('login')" style="padding:8px 20px;font-size:.9rem">Log in</button>
+    <span class="demo-flag">DEMO</span>
+    <button class="btn btn-ghost btn-sm" id="nav-auth" onclick="go('login')">Log in</button>
   </div>
 </header>
 
-<!-- Journey rail: the one completed user journey, made visible -->
 <nav class="journey" aria-label="Signup journey progress">
   <div class="j-step" data-j="1"><span class="j-dot"></span><span class="j-label">Discover</span></div>
   <div class="j-line" data-jl="1"></div>
@@ -210,41 +216,142 @@
   <section class="view" id="view-landing">
     <div class="hero">
       <div class="eyebrow">A Synergies4 community</div>
-      <h1>Do more with AI. <em>Together.</em></h1>
-      <p>WaiMore™ is the community where you sharpen real AI skill — not by watching, but by doing. Take on challenges, form teams, and run quests that prove what you can build.</p>
+      <h1>Start where you are. <em>Build where you want to go.</em></h1>
+      <p>WaiMore™ is the community where you find out exactly where you stand with AI — then close the gap. Assess your AI &amp; career fluency, get micro-learnings from Coach Luma™, join real solution Quests with teams, and walk away with proof of what you can build.</p>
       <div class="hero-cta">
-        <button class="btn btn-primary" onclick="go('signup')">Create account</button>
-        <button class="btn btn-ghost" onclick="go('login')">Log in</button>
+        <button class="btn btn-primary" onclick="selectTier('free')">Join free</button>
+        <button class="btn btn-ghost" onclick="document.getElementById('tiers').scrollIntoView()">See membership tiers</button>
       </div>
     </div>
 
-    <div class="how">
-      <div class="how-card">
-        <span class="how-tag">Challenges</span>
-        <h3>Solve real AI problems</h3>
-        <p>Submit and tackle practical AI challenges drawn from real work — then see how your solutions score.</p>
+    <!-- Mechanism -->
+    <div class="section-head">
+      <h2>How WaiMore works</h2>
+      <p class="section-sub">Five steps, one loop. Assess. Learn. Build. Demonstrate. Advance. Then the loop runs again — at a higher level.</p>
+    </div>
+    <div class="mech">
+      <div class="mech-card"><span class="mech-num">01 · ASSESS</span><h3>Know where you stand</h3><p>Take your AI &amp; Career baseline fluency assessment — skills, gaps, job risk, and your personal Career GPS.</p></div>
+      <div class="mech-card"><span class="mech-num">02 · LEARN</span><h3>Coach Luma feeds you</h3><p>Micro-learnings matched to your gaps, spoon-fed by Coach Luma™ — direction, not another course catalog.</p></div>
+      <div class="mech-card"><span class="mech-num">03 · BUILD</span><h3>Join solution Quests</h3><p>Real problems submitted by real members become guided team builds — prompts, workflows, working solutions.</p></div>
+      <div class="mech-card"><span class="mech-num">04 · DEMONSTRATE</span><h3>Earn proof, not points</h3><p>Badges tied to what you actually built — portfolio artifacts and capability proof, not vanity gamification.</p></div>
+      <div class="mech-card"><span class="mech-num">05 · ADVANCE</span><h3>Move up on purpose</h3><p>Your roadmap updates, your level rises, and new rooms open — all the way to the S4 Advisor Circle.</p></div>
+    </div>
+    <p class="badge-ladder">The proof ladder: <span class="mono">Explorer → Practitioner → Builder → Strategist → Transformation Leader</span></p>
+
+    <!-- Flywheel -->
+    <div class="section-head"><h2>This is not a forum</h2>
+      <p class="section-sub">WaiMore runs on the Challenge-to-Solution flywheel. Every member problem makes the whole community smarter.</p>
+    </div>
+    <div class="flywheel">
+      <h2>The Quest flywheel</h2>
+      <p class="lead">Your unsolved problem is the community's next build. Here's the loop:</p>
+      <div class="fly-steps">
+        <div class="fly-step"><span class="mono">SUBMIT</span><p>Any member drops a real AI problem in the Suggestion Box — free.</p></div>
+        <div class="fly-step"><span class="mono">SELECT</span><p>Advisor Circle members vote on which problems become official Quests.</p></div>
+        <div class="fly-step"><span class="mono">BUILD</span><p>Builder teams solve it in guided sessions — workshops, prompts, workflows.</p></div>
+        <div class="fly-step"><span class="mono">SHIP</span><p>Outputs become playbooks, prompt packs, and assets in the member library.</p></div>
+        <div class="fly-step"><span class="mono">LEARN</span><p>Patterns feed community intelligence reports — and what gets built next.</p></div>
       </div>
-      <div class="how-card">
-        <span class="how-tag">Teams</span>
-        <h3>Build with others</h3>
-        <p>Form teams around problems worth solving. Skill grows faster when it's shared.</p>
-      </div>
-      <div class="how-card">
-        <span class="how-tag">Quests</span>
-        <h3>Level up on purpose</h3>
-        <p>Structured quests turn scattered learning into a track record you can point to.</p>
-      </div>
+      <p class="fly-note"><b>Every tier has a role:</b> Free members supply the signal. Builders solve. Advisors steer. Everyone advances.</p>
     </div>
 
-    <div class="price-band">
+    <!-- Tier ladder -->
+    <div class="section-head" id="tiers"><h2>Pick your level. Change anytime.</h2>
+      <p class="section-sub">Every tier is a deliberate subset of the one above it. Founding-member pricing while it lasts. Cancel anytime — one button, no maze.</p>
+    </div>
+    <div class="tiers">
+      <div class="tier-card">
+        <h3>Free</h3><div class="tier-promise">"Start where you are."</div>
+        <div class="tier-price">$0</div>
+        <span class="founding">OPEN COMMUNITY</span>
+        <ul class="tier-feats">
+          <li>Community access, introductions &amp; discussion</li>
+          <li>Teaser AI fluency assessment</li>
+          <li>Submit problems &amp; ideas, join surveys</li>
+          <li>Summaries and Quest previews</li>
+        </ul>
+        <button class="btn btn-ghost btn-wide btn-sm" onclick="selectTier('free')">Join free</button>
+      </div>
+      <div class="tier-card">
+        <h3>S4 Navigator</h3><div class="tier-promise">"Stay guided."</div>
+        <div class="tier-price">$15<span>/mo</span></div>
+        <span class="founding">FOUNDING: $9.95/MO</span>
+        <ul class="tier-feats">
+          <li>Full reports &amp; member asset library</li>
+          <li>Coach Luma™ micro-learning direction</li>
+          <li>Monthly office hours with S4 partners</li>
+          <li>Quest outputs · vote on topics</li>
+        </ul>
+        <button class="btn btn-primary btn-wide btn-sm" onclick="selectTier('nav')">Start Navigator</button>
+      </div>
+      <div class="tier-card featured">
+        <span class="tier-flag">MOST ACTIVE</span>
+        <h3>S4 Builder</h3><div class="tier-promise">"Build with us."</div>
+        <div class="tier-price">$49<span>/mo</span></div>
+        <span class="founding">FOUNDING: $39/MO</span>
+        <ul class="tier-feats">
+          <li>Guided solution Quests on live teams</li>
+          <li>Workshops, playbooks &amp; prompt packs</li>
+          <li>Peer feedback &amp; demo days</li>
+          <li>Portfolio artifacts &amp; proof badges</li>
+        </ul>
+        <button class="btn btn-primary btn-wide btn-sm" onclick="selectTier('builder')">Start Builder</button>
+      </div>
+      <div class="tier-card">
+        <h3>S4 Advisor Circle</h3><div class="tier-promise">"Get closer to S4 strategic thinking."</div>
+        <div class="tier-price">$149<span>/mo</span></div>
+        <span class="founding">FOUNDING: $99/MO</span>
+        <ul class="tier-feats">
+          <li>Priority Ask-S4 · 24-hr target response</li>
+          <li>Monthly strategic roundtables &amp; think tanks</li>
+          <li>Full community intelligence reports</li>
+          <li>Product roadmap access &amp; early pilots</li>
+        </ul>
+        <button class="btn btn-primary btn-wide btn-sm" onclick="selectTier('advisor')">Join the Circle</button>
+      </div>
+    </div>
+    <div class="premium-band">
       <div>
-        <h2>One membership. Full access.</h2>
-        <p class="sub">Every challenge, every team, every quest. Cancel anytime — one button, no maze.</p>
+        <h3>Premium — the escalation layer</h3>
+        <p>When it needs to be private, custom, and implementation-heavy: 1:1 advisory, custom AI builds, enterprise workshops, governance. This is consulting, not a subscription.</p>
       </div>
-      <div style="text-align:right">
-        <div class="price-tag">$19<span>/month</span></div>
-        <button class="btn btn-primary" style="margin-top:12px" onclick="go('signup')">Join WaiMore</button>
+      <div class="tier-price">from $350<span>/hr</span></div>
+    </div>
+
+    <!-- Tier explorer -->
+    <div class="section-head"><h2>What you can actually do at each level</h2>
+      <p class="section-sub">Click a tier. See what members at that level can see, do, receive — and what they walk away with.</p>
+    </div>
+    <div class="exp-tabs" role="tablist">
+      <button class="exp-tab" data-tier="free" onclick="showTier('free')">Free</button>
+      <button class="exp-tab" data-tier="nav" onclick="showTier('nav')">Navigator</button>
+      <button class="exp-tab" data-tier="builder" onclick="showTier('builder')">Builder</button>
+      <button class="exp-tab" data-tier="advisor" onclick="showTier('advisor')">Advisor Circle</button>
+    </div>
+    <div class="exp-panel">
+      <div class="exp-grid">
+        <div class="exp-col"><h4>You can see</h4><ul id="exp-see"></ul></div>
+        <div class="exp-col"><h4>You can do</h4><ul id="exp-do"></ul></div>
+        <div class="exp-col"><h4>You receive</h4><ul id="exp-get"></ul></div>
+        <div class="exp-col"><h4>You leave with</h4><ul id="exp-leave"></ul></div>
       </div>
+      <div class="exp-cta">
+        <button class="btn btn-primary btn-sm" id="exp-join">Join this tier</button>
+        <span class="exp-upnote" id="exp-up"></span>
+      </div>
+    </div>
+
+    <!-- Add-ons -->
+    <div class="section-head"><h2>Optional add-ons</h2>
+      <p class="section-sub">Reusable assets are included in your tier or available à la carte. Private expertise is premium.</p>
+    </div>
+    <div class="addons">
+      <span class="addon">Assessment refresh · <b>$4.99</b></span>
+      <span class="addon">Detailed report · <b>$29</b></span>
+      <span class="addon">Full roadmap package · <b>$79</b></span>
+      <span class="addon">Prompt pack · <b>$9–19</b></span>
+      <span class="addon">Workshop replay · <b>$49</b></span>
+      <span class="addon">Quest challenge seat · <b>$99</b></span>
     </div>
   </section>
 
@@ -252,7 +359,8 @@
   <section class="view" id="view-signup">
     <div class="panel">
       <h2>Create your account</h2>
-      <p class="lead">Step 1 of 2 — the payment step comes next.</p>
+      <p class="lead" id="signup-lead">Step 1 of 2 — the payment step comes next.</p>
+      <div class="tier-chip"><span>Joining as <b id="signup-tier">S4 Navigator</b></span><button class="btn-quiet" onclick="go('landing');document.getElementById('tiers').scrollIntoView()">Change</button></div>
       <div class="form-error" id="signup-error" role="alert"></div>
       <div class="field">
         <label for="su-name">Full name</label>
@@ -267,7 +375,7 @@
         <input id="su-pass" type="password" autocomplete="new-password" placeholder="At least 8 characters">
         <div class="hint">Demo note: use a throwaway password, never a real one.</div>
       </div>
-      <button class="btn btn-primary btn-wide" onclick="handleSignup()">Continue to payment</button>
+      <button class="btn btn-primary btn-wide" id="signup-btn" onclick="handleSignup()">Continue to payment</button>
       <div class="swap-link">Already a member? <a href="#" onclick="go('login');return false">Log in</a></div>
     </div>
   </section>
@@ -275,31 +383,26 @@
   <!-- ============ CHECKOUT ============ -->
   <section class="view" id="view-checkout">
     <div class="panel">
-      <h2>Start your membership</h2>
-      <p class="lead">Step 2 of 2 — you're one click from inside.</p>
+      <h2 id="co-title">Start your membership</h2>
+      <p class="lead" id="co-lead">Step 2 of 2 — you're one click from inside.</p>
       <div class="sim-badge">
         <span class="mono">SIMULATED</span>
         <span>This is a demo checkout. No real payment is processed and no card is charged.</span>
       </div>
-      <div class="order-line"><span>WaiMore™ membership</span><span>$19.00 / month</span></div>
-      <div class="order-line total"><span>Due today</span><span>$19.00</span></div>
+      <div class="order-line"><span id="co-plan">Membership</span><span id="co-price">—</span></div>
+      <div class="order-line"><span>Founding-member discount</span><span id="co-discount">—</span></div>
+      <div class="order-line total"><span>Due today</span><span id="co-total">—</span></div>
       <div class="field" style="margin-top:20px">
         <label for="cc-num">Card number</label>
         <input id="cc-num" class="mono" inputmode="numeric" value="4242 4242 4242 4242">
         <div class="hint">Pre-filled with a standard test card.</div>
       </div>
       <div class="card-row">
-        <div class="field">
-          <label for="cc-exp">Expiry</label>
-          <input id="cc-exp" class="mono" inputmode="numeric" value="12/28">
-        </div>
-        <div class="field">
-          <label for="cc-cvc">CVC</label>
-          <input id="cc-cvc" class="mono" inputmode="numeric" value="123">
-        </div>
+        <div class="field"><label for="cc-exp">Expiry</label><input id="cc-exp" class="mono" inputmode="numeric" value="12/28"></div>
+        <div class="field"><label for="cc-cvc">CVC</label><input id="cc-cvc" class="mono" inputmode="numeric" value="123"></div>
       </div>
-      <button class="btn btn-primary btn-wide" id="pay-btn" onclick="handleCheckout()">Start subscription — $19/mo</button>
-      <div class="swap-link"><button class="btn-quiet" onclick="go('landing')">Cancel and go back</button></div>
+      <button class="btn btn-primary btn-wide" id="pay-btn" onclick="handleCheckout()">Start subscription</button>
+      <div class="swap-link"><button class="btn-quiet" onclick="cancelCheckout()">Cancel and go back</button></div>
     </div>
   </section>
 
@@ -309,16 +412,10 @@
       <h2>Welcome back</h2>
       <p class="lead">Log in to your WaiMore™ account.</p>
       <div class="form-error" id="login-error" role="alert"></div>
-      <div class="field">
-        <label for="li-email">Email</label>
-        <input id="li-email" type="email" autocomplete="email" placeholder="you@example.com">
-      </div>
-      <div class="field">
-        <label for="li-pass">Password</label>
-        <input id="li-pass" type="password" autocomplete="current-password" placeholder="Your password">
-      </div>
+      <div class="field"><label for="li-email">Email</label><input id="li-email" type="email" autocomplete="email" placeholder="you@example.com"></div>
+      <div class="field"><label for="li-pass">Password</label><input id="li-pass" type="password" autocomplete="current-password" placeholder="Your password"></div>
       <button class="btn btn-primary btn-wide" onclick="handleLogin()">Log in</button>
-      <div class="swap-link">New here? <a href="#" onclick="go('signup');return false">Create an account</a></div>
+      <div class="swap-link">New here? <a href="#" onclick="go('landing');return false">See tiers &amp; join</a></div>
     </div>
   </section>
 
@@ -329,28 +426,27 @@
         <div class="eyebrow">Member dashboard</div>
         <h2 id="dash-welcome">Welcome</h2>
       </div>
-      <span class="status-chip">Subscription active</span>
+      <span class="status-chip" id="dash-status">Membership active</span>
     </div>
     <div class="dash-grid">
       <div class="dash-card">
         <h3>Your plan</h3>
-        <div class="big">$19 / month</div>
-        <p id="dash-billing">Next billing date: —</p>
+        <div class="big" id="dash-plan">—</div>
+        <p id="dash-billing">—</p>
       </div>
       <div class="dash-card">
         <h3>Member since</h3>
         <div class="big" id="dash-since">—</div>
         <p>You're part of the founding cohort.</p>
       </div>
-      <div class="dash-card soon">
-        <h3>AI challenges <span class="soon-tag">Demo #2</span></h3>
-        <p>Submit a real AI problem and put it in front of the community. Coming next.</p>
-      </div>
-      <div class="dash-card soon">
-        <h3>Teams &amp; quests <span class="soon-tag">Later</span></h3>
-        <p>Form teams, run quests, build a track record. On the roadmap after challenges.</p>
+      <div class="dash-card">
+        <h3>Your proof level</h3>
+        <div class="big">Explorer</div>
+        <p>Complete your baseline assessment to set your level and start the ladder.</p>
       </div>
     </div>
+    <div class="dash-section">Your spaces</div>
+    <div class="dash-grid" id="spaces-grid"></div>
     <div style="margin-top:28px">
       <button class="btn btn-ghost" onclick="handleLogout()">Log out</button>
     </div>
@@ -359,7 +455,7 @@
 </main>
 
 <footer>
-  <span>WaiMore™ · A Synergies4 venture concept · Demo #1 — simulated payments, browser-local accounts</span>
+  <span>WaiMore™ · A Synergies4 venture concept · Demo — simulated payments, browser-local accounts · Pricing shown is founding-launch draft</span>
   <button class="btn-quiet" onclick="resetDemo()">Reset demo data</button>
 </footer>
 
@@ -367,14 +463,71 @@
 
 <script>
 /* ============================================================
-   WaiMore™ Demo #1 — single completed user journey
-   Discover → Create account → Subscribe (simulated) → Log in
+   WaiMore™ Demo v2 — vision + tiers + one completed journey
+   Discover → Account → Subscribe (simulated; Free skips) → Inside
    Storage: browser localStorage only. No backend, no real payments.
    ============================================================ */
 
 const USERS_KEY = 'waimore_users';
 const SESSION_KEY = 'waimore_session';
-let pendingUser = null; // holds account details between signup and checkout
+let pendingUser = null;      // account details between signup and checkout
+let pendingTier = 'nav';     // tier selected on landing
+let pendingUpgrade = null;   // tier id when an existing member upgrades
+
+/* ---------- tier model (single source of truth) ---------- */
+const TIERS = {
+  free:    { rank:0, name:'Free — Open Community', short:'Free', price:0,   founding:0,    promise:'Start where you are.' },
+  nav:     { rank:1, name:'S4 Navigator',          short:'Navigator', price:15,  founding:9.95, promise:'Stay guided.' },
+  builder: { rank:2, name:'S4 Builder',            short:'Builder',   price:49,  founding:39,   promise:'Build with us.' },
+  advisor: { rank:3, name:'S4 Advisor Circle',     short:'Advisor Circle', price:149, founding:99, promise:'Get closer to S4 strategic thinking.' }
+};
+
+/* ---------- tier explorer content (see / do / receive / leave with) ---------- */
+const EXPLORER = {
+  free: {
+    see: ['Community discussions and introductions','Quest previews and highlight summaries','Member wins — selected highlights'],
+    do:  ['Introduce yourself and join discussions','Take the teaser AI fluency assessment','Drop real problems in the Suggestion Box','Join AI research surveys'],
+    get: ['Orientation — how the community works','Your baseline AI readiness snapshot','A clear view of what each tier unlocks'],
+    leave:['A sense of where you stand','Belonging before you spend a dollar'],
+    up: 'Upgrade when you want your full report, your roadmap, and Coach Luma™ guiding your next step.'
+  },
+  nav: {
+    see: ['Everything in Free','Navigator Library — full reports &  member assets','Quest outputs: what teams built and how'],
+    do:  ['Attend monthly office hours with S4 partners','Vote on which topics and Quests come next','Follow your personalized learning direction'],
+    get: ['Coach Luma™ micro-learnings matched to your gaps','Full assessment reports, not summaries','Member asset library access'],
+    leave:['Your personal AI &amp; career roadmap','Steady guided progress, month over month'],
+    up: 'Upgrade when reading about builds stops being enough — and you want to be on the team doing them.'
+  },
+  builder: {
+    see: ['Everything in Navigator','Builder Lab — live guided Quests','Workshops, playbooks, prompt packs, workflows'],
+    do:  ['Join solution Quest teams on real member problems','Attend workshops and demo days','Give and get peer feedback on builds'],
+    get: ['Guided challenge participation with S4 facilitation','Implementation notes and reusable assets','Proof badges tied to what you shipped'],
+    leave:['Portfolio artifacts you can show an employer','Capability proof: Practitioner → Builder and beyond'],
+    up: 'Upgrade when your questions turn strategic: adoption, governance, transformation, what to build next.'
+  },
+  advisor: {
+    see: ['Everything in Builder','Full community intelligence reports','S4 product roadmap: Coach Luma™, Genie™, assessments','Complete Quest intelligence — outputs and the why'],
+    do:  ['Priority Ask-S4 — 24-hour target response','Monthly strategic roundtables and think tanks','Vote on which problems become official Quests','Join early product pilots'],
+    get: ['Monthly Advisor Brief — curated signal, not news','Strategic reviews of your roadmap or AI strategy','Small-group advisory sessions'],
+    leave:['Influence over what gets built','Insider status and the Advisor badge','Retainer-grade access at community pricing'],
+    up: 'Beyond this sits Premium: private, custom, implementation-heavy work with the S4 team.'
+  }
+};
+
+/* ---------- dashboard spaces (gated by tier rank) ---------- */
+const SPACES = [
+  { name:'Start Here', min:0, desc:'Orientation, how the community works, and your first steps.' },
+  { name:'AI Journey Assessment', min:0, desc:'Your AI & career baseline. Free teaser; full report with Navigator.' },
+  { name:'Introductions & Discussion', min:0, desc:'Meet the community. Belonging is step one.' },
+  { name:'AI Problem Suggestion Box', min:0, desc:'Drop a real problem. It might become the next Quest.' },
+  { name:'Navigator Library', min:1, desc:'Full reports, member assets, and Coach Luma™ micro-learnings.' },
+  { name:'Builder Lab — Quests', min:2, desc:'Live guided solution builds. Teams, workshops, demo days.' },
+  { name:'Ask S4', min:3, desc:'Priority strategic Q&A with S4 partners. 24-hour target response.' },
+  { name:'Advisor Roundtable', min:3, desc:'Monthly strategic sessions, think tanks, and product pilots.' },
+  { name:'Member Wins & Demos', min:0, desc:'Proof, badges, and what members are shipping.' }
+];
+const UNLOCK_LABEL = { 1:'Navigator', 2:'Builder', 3:'Advisor Circle' };
+const UNLOCK_TIER  = { 1:'nav', 2:'builder', 3:'advisor' };
 
 /* ---------- storage helpers ---------- */
 function loadUsers(){ try{ return JSON.parse(localStorage.getItem(USERS_KEY)) || {}; }catch(e){ return {}; } }
@@ -383,6 +536,14 @@ function getSession(){ try{ return JSON.parse(localStorage.getItem(SESSION_KEY))
 function setSession(email){ localStorage.setItem(SESSION_KEY, JSON.stringify({email, at: Date.now()})); }
 function clearSession(){ localStorage.removeItem(SESSION_KEY); }
 
+/* map any stored plan id (incl. v1 'monthly') to a tier */
+function tierOf(user){
+  const p = user && user.subscription ? user.subscription.plan : 'free';
+  if (TIERS[p]) return p;
+  if (p === 'monthly') return 'nav'; // legacy v1 accounts
+  return 'free';
+}
+
 /* ---------- password hashing (demo-grade) ---------- */
 async function hashPassword(pw){
   if (window.crypto && crypto.subtle){
@@ -390,7 +551,6 @@ async function hashPassword(pw){
     const buf = await crypto.subtle.digest('SHA-256', data);
     return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2,'0')).join('');
   }
-  // fallback for non-secure contexts
   let h = 0;
   for (let i = 0; i < pw.length; i++){ h = ((h << 5) - h + pw.charCodeAt(i)) | 0; }
   return 'fb_' + h.toString(16);
@@ -417,28 +577,48 @@ function go(view){
 
 function updateNav(){
   const btn = document.getElementById('nav-auth');
-  if (getSession()){
-    btn.textContent = 'Dashboard';
-    btn.onclick = () => go('dashboard');
-  } else {
-    btn.textContent = 'Log in';
-    btn.onclick = () => go('login');
-  }
+  if (getSession()){ btn.textContent = 'Dashboard'; btn.onclick = () => enterDashboard(); }
+  else { btn.textContent = 'Log in'; btn.onclick = () => go('login'); }
 }
 
 function toast(msg){
   const t = document.getElementById('toast');
-  t.textContent = msg;
-  t.classList.add('show');
+  t.textContent = msg; t.classList.add('show');
   setTimeout(() => t.classList.remove('show'), 2600);
 }
-
-function showError(id, msg){
-  const el = document.getElementById(id);
-  el.textContent = msg;
-  el.classList.add('show');
-}
+function showError(id, msg){ const el=document.getElementById(id); el.textContent=msg; el.classList.add('show'); }
 function clearError(id){ document.getElementById(id).classList.remove('show'); }
+
+/* ---------- tier selection & explorer ---------- */
+function selectTier(id){
+  pendingTier = id;
+  const t = TIERS[id];
+  const session = getSession();
+  if (session){
+    // existing member choosing a tier = upgrade/change path
+    if (id === 'free'){ toast('You already have an account — manage your plan from the dashboard.'); enterDashboard(); return; }
+    startUpgrade(id); return;
+  }
+  document.getElementById('signup-tier').textContent = t.name;
+  document.getElementById('signup-btn').textContent = id === 'free' ? 'Create free account' : 'Continue to payment';
+  document.getElementById('signup-lead').textContent = id === 'free'
+    ? 'One step — no payment needed for the free community.'
+    : 'Step 1 of 2 — the payment step comes next.';
+  go('signup');
+}
+
+function showTier(id){
+  document.querySelectorAll('.exp-tab').forEach(b => b.classList.toggle('on', b.dataset.tier === id));
+  const c = EXPLORER[id], t = TIERS[id];
+  const fill = (elId, items) => {
+    document.getElementById(elId).innerHTML = items.map(i => '<li>' + i + '</li>').join('');
+  };
+  fill('exp-see', c.see); fill('exp-do', c.do); fill('exp-get', c.get); fill('exp-leave', c.leave);
+  const join = document.getElementById('exp-join');
+  join.textContent = id === 'free' ? 'Join free' : 'Join ' + t.short + (t.founding ? ' — $' + t.founding + '/mo founding' : '');
+  join.onclick = () => selectTier(id);
+  document.getElementById('exp-up').textContent = c.up;
+}
 
 /* ---------- signup ---------- */
 async function handleSignup(){
@@ -455,30 +635,81 @@ async function handleSignup(){
   if (users[email]){ showError('signup-error','An account with that email already exists. Log in instead.'); return; }
 
   pendingUser = { name, email, passHash: await hashPassword(pass) };
+
+  if (pendingTier === 'free'){
+    createUser(pendingUser, 'free');
+    pendingUser = null;
+    enterDashboard();
+    toast('Welcome to the WaiMore community!');
+    return;
+  }
+  renderCheckout(pendingTier, false);
   go('checkout');
 }
 
-/* ---------- simulated checkout ---------- */
+/* ---------- checkout (new member or upgrade) ---------- */
+function renderCheckout(tierId, isUpgrade){
+  const t = TIERS[tierId];
+  document.getElementById('co-title').textContent = isUpgrade ? 'Upgrade to ' + t.short : 'Start your membership';
+  document.getElementById('co-lead').textContent = isUpgrade
+    ? 'Your account stays — only your level changes.'
+    : "Step 2 of 2 — you're one click from inside.";
+  document.getElementById('co-plan').textContent = t.name + ' (monthly)';
+  document.getElementById('co-price').textContent = '$' + t.price.toFixed(2) + ' / month';
+  document.getElementById('co-discount').textContent = '– $' + (t.price - t.founding).toFixed(2) + ' (founding)';
+  document.getElementById('co-total').textContent = '$' + t.founding.toFixed(2);
+  document.getElementById('pay-btn').textContent =
+    (isUpgrade ? 'Upgrade — $' : 'Start subscription — $') + t.founding + '/mo';
+}
+
+function startUpgrade(tierId){
+  const session = getSession();
+  if (!session){ selectTier(tierId); return; }
+  const user = loadUsers()[session.email];
+  const current = TIERS[tierOf(user)];
+  if (TIERS[tierId].rank <= current.rank){ toast('You already have ' + current.short + ' access.'); enterDashboard(); return; }
+  pendingUpgrade = tierId;
+  renderCheckout(tierId, true);
+  go('checkout');
+}
+
+function cancelCheckout(){
+  if (pendingUpgrade){ pendingUpgrade = null; enterDashboard(); }
+  else { go('landing'); }
+}
+
+function createUser(p, tierId){
+  const users = loadUsers();
+  const now = Date.now();
+  users[p.email] = {
+    name: p.name, passHash: p.passHash, createdAt: now,
+    subscription: { plan: tierId, price: TIERS[tierId].founding, status:'active', startedAt: now }
+  };
+  saveUsers(users);
+  setSession(p.email);
+}
+
 function handleCheckout(){
-  if (!pendingUser){ go('signup'); return; }
   const btn = document.getElementById('pay-btn');
-  btn.disabled = true;
-  btn.textContent = 'Processing…';
+  btn.disabled = true; const label = btn.textContent; btn.textContent = 'Processing…';
 
   setTimeout(() => {
-    const users = loadUsers();
-    const now = Date.now();
-    users[pendingUser.email] = {
-      name: pendingUser.name,
-      passHash: pendingUser.passHash,
-      createdAt: now,
-      subscription: { plan: 'monthly', price: 19, status: 'active', startedAt: now }
-    };
-    saveUsers(users);
-    setSession(pendingUser.email);
+    btn.disabled = false; btn.textContent = label;
+    if (pendingUpgrade){
+      const session = getSession();
+      const users = loadUsers();
+      const u = users[session.email];
+      u.subscription = { plan: pendingUpgrade, price: TIERS[pendingUpgrade].founding, status:'active', startedAt: Date.now() };
+      saveUsers(users);
+      const name = TIERS[pendingUpgrade].short;
+      pendingUpgrade = null;
+      enterDashboard();
+      toast('Upgraded to ' + name + ' — new spaces unlocked.');
+      return;
+    }
+    if (!pendingUser){ go('signup'); return; }
+    createUser(pendingUser, pendingTier);
     pendingUser = null;
-    btn.disabled = false;
-    btn.textContent = 'Start subscription — $19/mo';
     enterDashboard();
     toast('Subscription started — welcome to WaiMore!');
   }, 1200);
@@ -491,21 +722,15 @@ async function handleLogin(){
   const pass = document.getElementById('li-pass').value;
   const users = loadUsers();
   const user = users[email];
-
   if (!user){ showError('login-error','No account found for that email. Create one first.'); return; }
   const hash = await hashPassword(pass);
   if (hash !== user.passHash){ showError('login-error','Incorrect password. Try again.'); return; }
-
   setSession(email);
   enterDashboard();
   toast('Logged in — welcome back, ' + user.name.split(' ')[0] + '.');
 }
 
-function handleLogout(){
-  clearSession();
-  go('landing');
-  toast('Logged out.');
-}
+function handleLogout(){ clearSession(); go('landing'); toast('Logged out.'); }
 
 /* ---------- dashboard ---------- */
 function enterDashboard(){
@@ -514,13 +739,37 @@ function enterDashboard(){
   const user = loadUsers()[session.email];
   if (!user){ clearSession(); go('login'); return; }
 
+  const tierId = tierOf(user), t = TIERS[tierId];
   document.getElementById('dash-welcome').textContent = 'Welcome, ' + user.name.split(' ')[0];
+  document.getElementById('dash-status').textContent = t.short + ' member';
+  document.getElementById('dash-plan').textContent = tierId === 'free' ? 'Free' : '$' + (user.subscription.price ?? t.founding) + ' / month';
+
   const since = new Date(user.createdAt);
-  document.getElementById('dash-since').textContent =
-    since.toLocaleDateString(undefined, {month:'short', day:'numeric', year:'numeric'});
-  const nextBill = new Date(user.subscription.startedAt + 30*24*60*60*1000);
-  document.getElementById('dash-billing').textContent =
-    'Next billing date: ' + nextBill.toLocaleDateString(undefined, {month:'long', day:'numeric', year:'numeric'});
+  document.getElementById('dash-since').textContent = since.toLocaleDateString(undefined,{month:'short',day:'numeric',year:'numeric'});
+  if (tierId === 'free'){
+    document.getElementById('dash-billing').textContent = t.name + ' — upgrade anytime, one click.';
+  } else {
+    const nextBill = new Date(user.subscription.startedAt + 30*24*60*60*1000);
+    document.getElementById('dash-billing').textContent = t.name + ' · next billing ' + nextBill.toLocaleDateString(undefined,{month:'long',day:'numeric',year:'numeric'});
+  }
+
+  // render spaces gated by tier rank
+  const grid = document.getElementById('spaces-grid');
+  grid.innerHTML = '';
+  SPACES.forEach(s => {
+    const open = t.rank >= s.min;
+    const card = document.createElement('div');
+    card.className = 'dash-card' + (open ? '' : ' locked');
+    card.innerHTML =
+      '<h3>' + s.name +
+      ' <span class="space-tag ' + (open ? 'tag-open' : 'tag-lock') + '">' +
+      (open ? 'Open' : UNLOCK_LABEL[s.min]) + '</span></h3>' +
+      '<p>' + s.desc + '</p>' +
+      (open ? '' :
+        '<button class="up-btn" onclick="startUpgrade(\'' + UNLOCK_TIER[s.min] + '\')">Unlock with ' + UNLOCK_LABEL[s.min] + '</button>');
+    grid.appendChild(card);
+  });
+
   go('dashboard');
 }
 
@@ -529,13 +778,14 @@ function resetDemo(){
   if (!confirm('Reset all demo data? This deletes every demo account in this browser.')) return;
   localStorage.removeItem(USERS_KEY);
   localStorage.removeItem(SESSION_KEY);
-  pendingUser = null;
+  pendingUser = null; pendingUpgrade = null;
   go('landing');
   toast('Demo data cleared.');
 }
 
 /* ---------- boot ---------- */
 (function init(){
+  showTier('builder'); // explorer opens on the most active tier
   if (getSession()){ enterDashboard(); } else { go('landing'); }
 })();
 </script>
