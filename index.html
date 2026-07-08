@@ -10,33 +10,19 @@
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Spline+Sans:wght@400;500;600&family=Spline+Sans+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root{
-    --ink:#14323B;         /* deep petrol — primary text & surfaces */
-    --ink-soft:#3E5A62;    /* muted petrol — secondary text */
-    --paper:#F2F7F5;       /* cool mint-white background */
-    --card:#FFFFFF;
-    --line:#D5E2DE;
-    --marigold:#FFB224;    /* action / energy */
-    --marigold-deep:#E89A00;
-    --jade:#2E7D6B;        /* success / active subscription */
-    --jade-soft:#E2F0EC;
-    --danger:#B3402E;
-    --radius:14px;
-    --shadow:0 10px 30px rgba(20,50,59,.08);
+    --ink:#14323B; --ink-soft:#3E5A62; --paper:#F2F7F5; --card:#FFFFFF; --line:#D5E2DE;
+    --marigold:#FFB224; --marigold-deep:#E89A00; --jade:#2E7D6B; --jade-soft:#E2F0EC;
+    --danger:#B3402E; --radius:14px; --shadow:0 10px 30px rgba(20,50,59,.08);
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
-  body{
-    font-family:'Spline Sans',system-ui,sans-serif;
-    background:var(--paper);color:var(--ink);line-height:1.6;
-    min-height:100vh;display:flex;flex-direction:column;
-  }
-  h1,h2,h3{font-family:'Bricolage Grotesque',sans-serif;line-height:1.12;letter-spacing:-.01em}
+  body{font-family:'Spline Sans',system-ui,sans-serif;background:var(--paper);color:var(--ink);line-height:1.6;min-height:100vh;display:flex;flex-direction:column}
+  h1,h2,h3,h4{font-family:'Bricolage Grotesque',sans-serif;line-height:1.12;letter-spacing:-.01em}
   .mono{font-family:'Spline Sans Mono',monospace}
   a{color:var(--ink)}
   button{font:inherit;cursor:pointer}
   :focus-visible{outline:3px solid var(--marigold);outline-offset:2px;border-radius:4px}
 
-  /* ---------- Header ---------- */
   header{display:flex;align-items:center;justify-content:space-between;padding:18px 28px;border-bottom:1px solid var(--line);background:var(--paper)}
   .logo{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:1.45rem;letter-spacing:-.02em;cursor:pointer;background:none;border:none;color:var(--ink)}
   .logo .ai{color:var(--jade)}
@@ -44,7 +30,6 @@
   .header-actions{display:flex;gap:10px;align-items:center}
   .demo-flag{font-family:'Spline Sans Mono',monospace;font-size:.7rem;letter-spacing:.08em;background:var(--ink);color:var(--marigold);padding:4px 10px;border-radius:999px}
 
-  /* ---------- Journey rail ---------- */
   .journey{display:flex;justify-content:center;padding:14px 16px 10px;border-bottom:1px solid var(--line);background:var(--card)}
   .j-step{display:flex;align-items:center;gap:8px}
   .j-dot{width:12px;height:12px;border-radius:50%;border:2px solid var(--line);background:var(--card);transition:background .3s,border-color .3s}
@@ -56,14 +41,12 @@
   .j-line.done{background:var(--jade)}
   @media(max-width:560px){.j-line{width:22px;margin:0 5px}.j-label{display:none}.j-step.here .j-label{display:inline}}
 
-  /* ---------- Layout ---------- */
   main{flex:1;width:100%;max-width:1120px;margin:0 auto;padding:40px 24px 72px}
   .view{display:none;animation:rise .45s ease both}
   .view.active{display:block}
   @keyframes rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
   @media (prefers-reduced-motion:reduce){.view{animation:none}html{scroll-behavior:auto}}
 
-  /* ---------- Buttons ---------- */
   .btn{display:inline-block;border:none;border-radius:999px;padding:14px 30px;font-weight:600;font-size:1rem;transition:transform .12s;text-decoration:none}
   .btn:active{transform:scale(.98)}
   .btn-primary{background:var(--marigold);color:var(--ink);box-shadow:0 4px 14px rgba(232,154,0,.35)}
@@ -73,29 +56,26 @@
   .btn-wide{width:100%;text-align:center}
   .btn-quiet{background:none;border:none;color:var(--ink-soft);text-decoration:underline;font-size:.9rem}
   .btn-sm{padding:9px 20px;font-size:.88rem}
+  .btn-xs{padding:6px 16px;font-size:.8rem}
 
-  /* ---------- Landing hero ---------- */
   .hero{padding:44px 0 26px;max-width:760px}
   .eyebrow{font-family:'Spline Sans Mono',monospace;font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:var(--jade);margin-bottom:14px}
   .hero h1{font-size:clamp(2.3rem,6vw,4rem);font-weight:800;margin-bottom:18px}
   .hero h1 em{font-style:normal;color:var(--jade)}
   .hero p{font-size:1.15rem;color:var(--ink-soft);max-width:640px;margin-bottom:28px}
   .hero-cta{display:flex;gap:14px;flex-wrap:wrap}
-
   .section-head{margin:64px 0 8px}
   .section-head h2{font-size:clamp(1.6rem,3.4vw,2.2rem)}
   .section-sub{color:var(--ink-soft);max-width:640px;margin-bottom:26px}
 
-  /* ---------- Mechanism (Assess→Advance) ---------- */
   .mech{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px}
-  .mech-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:20px 18px;position:relative}
+  .mech-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:20px 18px}
   .mech-num{font-family:'Spline Sans Mono',monospace;font-size:.7rem;letter-spacing:.1em;color:var(--marigold-deep);display:block;margin-bottom:8px}
   .mech-card h3{font-size:1.05rem;margin-bottom:6px}
   .mech-card p{font-size:.87rem;color:var(--ink-soft)}
   .badge-ladder{margin-top:18px;font-size:.85rem;color:var(--ink-soft)}
   .badge-ladder .mono{color:var(--jade);font-size:.78rem}
 
-  /* ---------- Flywheel ---------- */
   .flywheel{background:var(--ink);color:var(--paper);border-radius:var(--radius);padding:36px 34px;box-shadow:var(--shadow)}
   .flywheel h2{font-size:1.6rem;margin-bottom:8px}
   .flywheel .lead{color:#B8CDC7;max-width:640px;margin-bottom:22px}
@@ -106,7 +86,6 @@
   .fly-note{margin-top:18px;font-size:.85rem;color:#B8CDC7}
   .fly-note b{color:var(--marigold)}
 
-  /* ---------- Tier ladder ---------- */
   .tiers{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;align-items:stretch}
   .tier-card{background:var(--card);border:1.5px solid var(--line);border-radius:var(--radius);padding:24px 22px;display:flex;flex-direction:column;position:relative}
   .tier-card.featured{border-color:var(--jade);box-shadow:var(--shadow)}
@@ -124,7 +103,6 @@
   .premium-band p{font-size:.86rem;color:var(--ink-soft);max-width:560px}
   .premium-band .tier-price{font-size:1.3rem;white-space:nowrap}
 
-  /* ---------- Tier explorer ---------- */
   .exp-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
   .exp-tab{border:1.5px solid var(--line);background:var(--card);border-radius:999px;padding:9px 20px;font-weight:600;font-size:.9rem;color:var(--ink-soft)}
   .exp-tab.on{background:var(--ink);color:var(--paper);border-color:var(--ink)}
@@ -137,12 +115,10 @@
   .exp-cta{margin-top:22px;display:flex;gap:14px;align-items:center;flex-wrap:wrap}
   .exp-upnote{font-size:.84rem;color:var(--ink-soft);font-style:italic}
 
-  /* ---------- Add-ons ---------- */
   .addons{display:flex;flex-wrap:wrap;gap:10px}
   .addon{font-family:'Spline Sans Mono',monospace;font-size:.78rem;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:8px 16px;color:var(--ink-soft)}
   .addon b{color:var(--ink)}
 
-  /* ---------- Panels / forms ---------- */
   .panel{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);max-width:460px;margin:0 auto;padding:36px 34px}
   .panel h2{font-size:1.7rem;margin-bottom:6px}
   .panel .lead{color:var(--ink-soft);font-size:.95rem;margin-bottom:24px}
@@ -150,14 +126,13 @@
   .tier-chip b{color:var(--jade)}
   .field{margin-bottom:18px}
   label{display:block;font-weight:600;font-size:.88rem;margin-bottom:6px}
-  input{width:100%;padding:12px 14px;border:1.5px solid var(--line);border-radius:10px;font:inherit;background:var(--paper);color:var(--ink)}
-  input:focus{border-color:var(--jade);outline:none;background:#fff}
+  input,textarea{width:100%;padding:12px 14px;border:1.5px solid var(--line);border-radius:10px;font:inherit;background:var(--paper);color:var(--ink)}
+  input:focus,textarea:focus{border-color:var(--jade);outline:none;background:#fff}
   .hint{font-size:.78rem;color:var(--ink-soft);margin-top:4px}
   .form-error{display:none;background:#FBEAE6;color:var(--danger);border:1px solid #EFC4BB;border-radius:10px;padding:10px 14px;font-size:.88rem;margin-bottom:16px}
   .form-error.show{display:block}
   .swap-link{text-align:center;margin-top:18px;font-size:.9rem;color:var(--ink-soft)}
 
-  /* ---------- Checkout ---------- */
   .sim-badge{display:flex;align-items:center;gap:10px;background:var(--jade-soft);border:1.5px dashed var(--jade);border-radius:10px;padding:10px 14px;margin-bottom:22px;font-size:.85rem}
   .sim-badge .mono{color:var(--jade);font-size:.7rem;letter-spacing:.08em;font-weight:500}
   .order-line{display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--line);font-size:.95rem}
@@ -165,35 +140,113 @@
   .card-row{display:flex;gap:12px}
   .card-row .field{flex:1}
 
-  /* ---------- Dashboard ---------- */
-  .dash-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:14px;margin-bottom:26px}
-  .dash-head h2{font-size:2rem}
+  /* ---------- Members area ---------- */
+  .dash-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:14px;margin-bottom:20px}
+  .dash-head h2{font-size:1.9rem}
   .status-chip{display:inline-flex;align-items:center;gap:8px;background:var(--jade-soft);color:var(--jade);font-weight:600;font-size:.85rem;border-radius:999px;padding:7px 16px}
   .status-chip::before{content:'';width:8px;height:8px;border-radius:50%;background:var(--jade)}
+  .member-nav{display:flex;gap:8px;flex-wrap:wrap;border-bottom:1px solid var(--line);padding-bottom:14px;margin-bottom:24px}
+  .m-tab{border:1.5px solid var(--line);background:var(--card);border-radius:999px;padding:8px 18px;font-weight:600;font-size:.86rem;color:var(--ink-soft)}
+  .m-tab.on{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+  .m-panel{display:none}
+  .m-panel.active{display:block;animation:rise .35s ease both}
+
   .dash-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
   .dash-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px}
   .dash-card h3{font-size:1rem;margin-bottom:8px}
   .dash-card .big{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:1.4rem}
   .dash-card p{font-size:.88rem;color:var(--ink-soft)}
-  .space-tag{font-family:'Spline Sans Mono',monospace;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;border-radius:999px;padding:3px 10px;float:right}
-  .tag-open{background:var(--jade-soft);color:var(--jade)}
-  .tag-lock{background:var(--paper);border:1px solid var(--line);color:var(--ink-soft)}
   .dash-card.locked{opacity:.72;border-style:dashed}
-  .dash-card.locked h3{color:var(--ink-soft)}
   .up-btn{margin-top:10px;background:none;border:1.5px solid var(--marigold-deep);color:var(--marigold-deep);border-radius:999px;padding:6px 16px;font-size:.8rem;font-weight:600}
   .up-btn:hover{background:var(--marigold);border-color:var(--marigold);color:var(--ink)}
-  .dash-section{font-family:'Spline Sans Mono',monospace;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);margin:28px 0 12px}
+  .dash-section{font-family:'Spline Sans Mono',monospace;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);margin:26px 0 12px}
 
-  /* ---------- Footer / toast ---------- */
+  .stage{font-family:'Spline Sans Mono',monospace;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;border-radius:999px;padding:3px 10px;float:right}
+  .st-building{background:#FFF3D6;color:var(--marigold-deep)}
+  .st-selected{background:var(--jade-soft);color:var(--jade)}
+  .st-voting{background:#E8EDF6;color:#3D5A8F}
+  .st-shipped{background:var(--ink);color:var(--paper)}
+  .tag-open{background:var(--jade-soft);color:var(--jade)}
+  .tag-lock{background:var(--paper);border:1px solid var(--line);color:var(--ink-soft)}
+  .quest-meta{font-family:'Spline Sans Mono',monospace;font-size:.72rem;color:var(--ink-soft);margin:8px 0 10px}
+  .joined-chip{display:inline-block;background:var(--jade-soft);color:var(--jade);font-size:.75rem;font-weight:600;border-radius:999px;padding:4px 12px;margin-top:10px}
+
+  .feed{list-style:none}
+  .feed li{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 16px;margin-bottom:8px;font-size:.9rem;display:flex;gap:12px;align-items:baseline}
+  .feed .when{font-family:'Spline Sans Mono',monospace;font-size:.68rem;color:var(--ink-soft);white-space:nowrap}
+  .feed .who{font-weight:600}
+
+  .disc-row{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px 18px;margin-bottom:10px;display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:center}
+  .disc-row h4{font-size:1rem}
+  .disc-row p{font-size:.82rem;color:var(--ink-soft)}
+
+  .idea-row{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 18px;margin-bottom:10px;display:flex;gap:14px;align-items:center}
+  .vote-btn{border:1.5px solid var(--line);background:var(--paper);border-radius:10px;padding:6px 12px;font-family:'Spline Sans Mono',monospace;font-size:.8rem;color:var(--ink);min-width:56px}
+  .vote-btn.voted{background:var(--jade-soft);border-color:var(--jade);color:var(--jade)}
+  .idea-row .grow{flex:1}
+  .idea-row h4{font-size:.95rem}
+  .idea-row p{font-size:.8rem;color:var(--ink-soft)}
+
+  .q-progress{height:8px;background:var(--paper);border:1px solid var(--line);border-radius:999px;overflow:hidden;margin:12px 0}
+  .q-progress div{height:100%;background:var(--jade);border-radius:999px;transition:width .3s}
+  .assess-opt{display:block;width:100%;text-align:left;background:var(--paper);border:1.5px solid var(--line);border-radius:10px;padding:12px 16px;margin-bottom:10px;font-size:.92rem}
+  .assess-opt:hover{border-color:var(--jade);background:#fff}
+  .result-band{background:var(--jade-soft);border:1px solid var(--jade);border-radius:var(--radius);padding:22px;margin-bottom:18px}
+  .result-band .big{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:1.6rem;color:var(--jade)}
+
+  .mod-row{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 18px;margin-bottom:10px;display:flex;gap:14px;align-items:center}
+  .mod-row.done-mod{opacity:.6}
+  .mod-row .grow{flex:1}
+  .mod-row h4{font-size:.95rem}
+  .mod-row h4 s{color:var(--ink-soft)}
+  .mod-row p{font-size:.78rem;color:var(--ink-soft)}
+  .mod-check{width:26px;height:26px;border-radius:8px;border:2px solid var(--line);background:var(--paper);font-size:.9rem;color:var(--jade);font-weight:700}
+  .mod-check.on{background:var(--jade);border-color:var(--jade);color:#fff}
+
+  /* ---------- Coach Luma dock ---------- */
+  .luma-fab{position:fixed;bottom:22px;right:22px;z-index:60;width:62px;height:62px;border-radius:50%;border:none;
+    background:radial-gradient(circle at 30% 30%, #4FA48F, var(--jade) 60%, #1E5548);color:#fff;
+    font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:1.5rem;
+    box-shadow:0 8px 24px rgba(20,50,59,.35);display:none}
+  .luma-fab.show{display:block}
+  .luma-fab .pulse{position:absolute;inset:-4px;border-radius:50%;border:2px solid var(--jade);opacity:.5;animation:pulse 2.4s infinite}
+  @keyframes pulse{0%{transform:scale(1);opacity:.5}70%{transform:scale(1.25);opacity:0}100%{opacity:0}}
+  @media (prefers-reduced-motion:reduce){.luma-fab .pulse{animation:none}}
+
+  .luma-dock{position:fixed;bottom:22px;right:22px;z-index:70;width:min(380px,calc(100vw - 24px));
+    background:var(--card);border:1px solid var(--line);border-radius:18px;box-shadow:0 18px 50px rgba(20,50,59,.25);
+    display:none;flex-direction:column;overflow:hidden}
+  .luma-dock.open{display:flex}
+  .luma-head{display:flex;align-items:center;gap:12px;padding:14px 16px;background:var(--ink);color:var(--paper)}
+  .luma-avatar{width:40px;height:40px;border-radius:50%;background:radial-gradient(circle at 30% 30%, #4FA48F, var(--jade) 60%, #1E5548);
+    display:flex;align-items:center;justify-content:center;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;flex-shrink:0}
+  .luma-head h4{font-size:.95rem}
+  .luma-head p{font-size:.7rem;color:#B8CDC7}
+  .luma-head .grow{flex:1}
+  .luma-ctl{background:none;border:1.5px solid rgba(255,255,255,.35);color:var(--paper);border-radius:8px;padding:5px 10px;font-size:.72rem}
+  .luma-ctl.on{background:var(--marigold);border-color:var(--marigold);color:var(--ink)}
+  .luma-msgs{padding:14px;max-height:320px;overflow-y:auto;display:flex;flex-direction:column;gap:10px;background:var(--paper)}
+  .lm{max-width:85%;padding:10px 14px;border-radius:14px;font-size:.88rem;line-height:1.5}
+  .lm.luma{background:var(--card);border:1px solid var(--line);border-bottom-left-radius:4px;align-self:flex-start}
+  .lm.user{background:var(--ink);color:var(--paper);border-bottom-right-radius:4px;align-self:flex-end}
+  .luma-chips{display:flex;gap:6px;flex-wrap:wrap;padding:0 14px 10px;background:var(--paper)}
+  .luma-chip{border:1px solid var(--jade);background:var(--card);color:var(--jade);border-radius:999px;padding:5px 12px;font-size:.75rem;font-weight:600}
+  .luma-chip:hover{background:var(--jade-soft)}
+  .luma-input{display:flex;gap:8px;padding:10px 12px;border-top:1px solid var(--line);background:var(--card)}
+  .luma-input input{flex:1;padding:10px 12px;font-size:.88rem}
+  .luma-send{background:var(--marigold);border:none;border-radius:10px;padding:0 16px;font-weight:700}
+  .luma-mic{background:var(--paper);border:1.5px solid var(--line);border-radius:10px;padding:0 12px;font-size:1rem}
+  .luma-mic.listening{background:#FBEAE6;border-color:var(--danger)}
+
   footer{border-top:1px solid var(--line);padding:22px 28px;display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:center;font-size:.8rem;color:var(--ink-soft)}
-  .toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(80px);background:var(--ink);color:var(--paper);padding:12px 22px;border-radius:999px;font-size:.9rem;opacity:0;transition:transform .3s,opacity .3s;pointer-events:none;z-index:50}
+  .toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(80px);background:var(--ink);color:var(--paper);padding:12px 22px;border-radius:999px;font-size:.9rem;opacity:0;transition:transform .3s,opacity .3s;pointer-events:none;z-index:90}
   .toast.show{transform:translateX(-50%) translateY(0);opacity:1}
 </style>
 </head>
 <body>
 
 <header>
-  <button class="logo" onclick="go('landing')">W<span class="ai">ai</span>More<sup>™</sup></button>
+  <button class="logo" onclick="goHome()">W<span class="ai">ai</span>More<sup>™</sup></button>
   <div class="header-actions">
     <span class="demo-flag">DEMO</span>
     <button class="btn btn-ghost btn-sm" id="nav-auth" onclick="go('login')">Log in</button>
@@ -224,7 +277,6 @@
       </div>
     </div>
 
-    <!-- Mechanism -->
     <div class="section-head">
       <h2>How WaiMore works</h2>
       <p class="section-sub">Five steps, one loop. Assess. Learn. Build. Demonstrate. Advance. Then the loop runs again — at a higher level.</p>
@@ -238,7 +290,6 @@
     </div>
     <p class="badge-ladder">The proof ladder: <span class="mono">Explorer → Practitioner → Builder → Strategist → Transformation Leader</span></p>
 
-    <!-- Flywheel -->
     <div class="section-head"><h2>This is not a forum</h2>
       <p class="section-sub">WaiMore runs on the Challenge-to-Solution flywheel. Every member problem makes the whole community smarter.</p>
     </div>
@@ -255,7 +306,6 @@
       <p class="fly-note"><b>Every tier has a role:</b> Free members supply the signal. Builders solve. Advisors steer. Everyone advances.</p>
     </div>
 
-    <!-- Tier ladder -->
     <div class="section-head" id="tiers"><h2>Pick your level. Change anytime.</h2>
       <p class="section-sub">Every tier is a deliberate subset of the one above it. Founding-member pricing while it lasts. Cancel anytime — one button, no maze.</p>
     </div>
@@ -318,7 +368,6 @@
       <div class="tier-price">from $350<span>/hr</span></div>
     </div>
 
-    <!-- Tier explorer -->
     <div class="section-head"><h2>What you can actually do at each level</h2>
       <p class="section-sub">Click a tier. See what members at that level can see, do, receive — and what they walk away with.</p>
     </div>
@@ -341,7 +390,6 @@
       </div>
     </div>
 
-    <!-- Add-ons -->
     <div class="section-head"><h2>Optional add-ons</h2>
       <p class="section-sub">Reusable assets are included in your tier or available à la carte. Private expertise is premium.</p>
     </div>
@@ -362,19 +410,10 @@
       <p class="lead" id="signup-lead">Step 1 of 2 — the payment step comes next.</p>
       <div class="tier-chip"><span>Joining as <b id="signup-tier">S4 Navigator</b></span><button class="btn-quiet" onclick="go('landing');document.getElementById('tiers').scrollIntoView()">Change</button></div>
       <div class="form-error" id="signup-error" role="alert"></div>
-      <div class="field">
-        <label for="su-name">Full name</label>
-        <input id="su-name" type="text" autocomplete="name" placeholder="Ada Lovelace">
-      </div>
-      <div class="field">
-        <label for="su-email">Email</label>
-        <input id="su-email" type="email" autocomplete="email" placeholder="you@example.com">
-      </div>
-      <div class="field">
-        <label for="su-pass">Password</label>
-        <input id="su-pass" type="password" autocomplete="new-password" placeholder="At least 8 characters">
-        <div class="hint">Demo note: use a throwaway password, never a real one.</div>
-      </div>
+      <div class="field"><label for="su-name">Full name</label><input id="su-name" type="text" autocomplete="name" placeholder="Ada Lovelace"></div>
+      <div class="field"><label for="su-email">Email</label><input id="su-email" type="email" autocomplete="email" placeholder="you@example.com"></div>
+      <div class="field"><label for="su-pass">Password</label><input id="su-pass" type="password" autocomplete="new-password" placeholder="At least 8 characters">
+        <div class="hint">Demo note: use a throwaway password, never a real one.</div></div>
       <button class="btn btn-primary btn-wide" id="signup-btn" onclick="handleSignup()">Continue to payment</button>
       <div class="swap-link">Already a member? <a href="#" onclick="go('login');return false">Log in</a></div>
     </div>
@@ -385,18 +424,13 @@
     <div class="panel">
       <h2 id="co-title">Start your membership</h2>
       <p class="lead" id="co-lead">Step 2 of 2 — you're one click from inside.</p>
-      <div class="sim-badge">
-        <span class="mono">SIMULATED</span>
-        <span>This is a demo checkout. No real payment is processed and no card is charged.</span>
-      </div>
+      <div class="sim-badge"><span class="mono">SIMULATED</span><span>This is a demo checkout. No real payment is processed and no card is charged.</span></div>
       <div class="order-line"><span id="co-plan">Membership</span><span id="co-price">—</span></div>
       <div class="order-line"><span>Founding-member discount</span><span id="co-discount">—</span></div>
       <div class="order-line total"><span>Due today</span><span id="co-total">—</span></div>
-      <div class="field" style="margin-top:20px">
-        <label for="cc-num">Card number</label>
+      <div class="field" style="margin-top:20px"><label for="cc-num">Card number</label>
         <input id="cc-num" class="mono" inputmode="numeric" value="4242 4242 4242 4242">
-        <div class="hint">Pre-filled with a standard test card.</div>
-      </div>
+        <div class="hint">Pre-filled with a standard test card.</div></div>
       <div class="card-row">
         <div class="field"><label for="cc-exp">Expiry</label><input id="cc-exp" class="mono" inputmode="numeric" value="12/28"></div>
         <div class="field"><label for="cc-cvc">CVC</label><input id="cc-cvc" class="mono" inputmode="numeric" value="123"></div>
@@ -419,374 +453,722 @@
     </div>
   </section>
 
-  <!-- ============ DASHBOARD ============ -->
+  <!-- ============ MEMBERS AREA ============ -->
   <section class="view" id="view-dashboard">
     <div class="dash-head">
       <div>
-        <div class="eyebrow">Member dashboard</div>
+        <div class="eyebrow">S4 Community · Members</div>
         <h2 id="dash-welcome">Welcome</h2>
       </div>
-      <span class="status-chip" id="dash-status">Membership active</span>
+      <span class="status-chip" id="dash-status">Member</span>
     </div>
-    <div class="dash-grid">
-      <div class="dash-card">
-        <h3>Your plan</h3>
-        <div class="big" id="dash-plan">—</div>
-        <p id="dash-billing">—</p>
+
+    <nav class="member-nav" aria-label="Member sections">
+      <button class="m-tab" data-m="home" onclick="showPanel('home')">Community Home</button>
+      <button class="m-tab" data-m="quests" onclick="showPanel('quests')">Quests</button>
+      <button class="m-tab" data-m="discussions" onclick="showPanel('discussions')">Discussions</button>
+      <button class="m-tab" data-m="ideas" onclick="showPanel('ideas')">Idea Box</button>
+      <button class="m-tab" data-m="assess" onclick="showPanel('assess')">My Baseline</button>
+      <button class="m-tab" data-m="journey" onclick="showPanel('journey')">My Journey</button>
+    </nav>
+
+    <!-- HOME / ACTIVITY -->
+    <div class="m-panel" id="panel-home">
+      <div class="dash-grid">
+        <div class="dash-card"><h3>Your plan</h3><div class="big" id="dash-plan">—</div><p id="dash-billing">—</p></div>
+        <div class="dash-card"><h3>Your proof level</h3><div class="big" id="dash-level">Explorer</div><p id="dash-level-note">Take your baseline to set your level and start the ladder.</p></div>
+        <div class="dash-card"><h3>Where to engage today</h3><p id="dash-suggest">Loading…</p><button class="btn btn-primary btn-xs" id="dash-suggest-btn" style="margin-top:10px">Go</button></div>
       </div>
-      <div class="dash-card">
-        <h3>Member since</h3>
-        <div class="big" id="dash-since">—</div>
-        <p>You're part of the founding cohort.</p>
-      </div>
-      <div class="dash-card">
-        <h3>Your proof level</h3>
-        <div class="big">Explorer</div>
-        <p>Complete your baseline assessment to set your level and start the ladder.</p>
-      </div>
+      <div class="dash-section">Community activity — find your way in</div>
+      <ul class="feed" id="activity-feed"></ul>
     </div>
-    <div class="dash-section">Your spaces</div>
-    <div class="dash-grid" id="spaces-grid"></div>
-    <div style="margin-top:28px">
-      <button class="btn btn-ghost" onclick="handleLogout()">Log out</button>
+
+    <!-- QUESTS -->
+    <div class="m-panel" id="panel-quests">
+      <p class="section-sub">Real member problems, now guided team builds. Join one, or watch what's shipping. Builder tier puts you on a team.</p>
+      <div class="dash-grid" id="quests-grid"></div>
     </div>
+
+    <!-- DISCUSSIONS -->
+    <div class="m-panel" id="panel-discussions">
+      <p class="section-sub">Belonging is step one. Jump into a conversation — every tier is welcome here.</p>
+      <div id="disc-list"></div>
+    </div>
+
+    <!-- IDEA BOX -->
+    <div class="m-panel" id="panel-ideas">
+      <p class="section-sub">Drop a real AI problem. The community votes, Advisors select, Builders build. Your problem could be the next Quest.</p>
+      <div class="dash-card" style="margin-bottom:20px">
+        <h3>Submit a problem or idea</h3>
+        <div class="field" style="margin-top:10px"><label for="idea-title">One-line problem statement</label>
+          <input id="idea-title" type="text" placeholder="e.g., Our weekly reports take 6 hours to compile by hand"></div>
+        <div class="field"><label for="idea-detail">A little context (optional)</label>
+          <textarea id="idea-detail" rows="2" placeholder="What have you tried? What would 'solved' look like?"></textarea></div>
+        <button class="btn btn-primary btn-sm" onclick="submitIdea()">Submit to the community</button>
+      </div>
+      <div class="dash-section">Open problems — vote for what gets built</div>
+      <div id="ideas-list"></div>
+    </div>
+
+    <!-- ASSESSMENT -->
+    <div class="m-panel" id="panel-assess">
+      <div id="assess-box"></div>
+    </div>
+
+    <!-- JOURNEY -->
+    <div class="m-panel" id="panel-journey">
+      <div id="journey-box"></div>
+    </div>
+
+    <div style="margin-top:32px"><button class="btn btn-ghost" onclick="handleLogout()">Log out</button></div>
   </section>
 
 </main>
 
 <footer>
-  <span>WaiMore™ · A Synergies4 venture concept · Demo — simulated payments, browser-local accounts · Pricing shown is founding-launch draft</span>
+  <span>WaiMore™ · A Synergies4 venture concept · Demo — simulated payments, browser-local accounts, Coach Luma scripted for demo · Pricing shown is founding-launch draft</span>
   <button class="btn-quiet" onclick="resetDemo()">Reset demo data</button>
 </footer>
+
+<!-- ============ COACH LUMA DOCK ============ -->
+<button class="luma-fab" id="luma-fab" onclick="openLuma()" aria-label="Open Coach Luma">
+  <span class="pulse"></span>L
+</button>
+<div class="luma-dock" id="luma-dock" role="dialog" aria-label="Coach Luma">
+  <div class="luma-head">
+    <div class="luma-avatar">L</div>
+    <div class="grow"><h4>Coach Luma™</h4><p>Your guide inside WaiMore</p></div>
+    <button class="luma-ctl" id="luma-voice" onclick="toggleVoice()" title="Toggle spoken responses">🔊 Voice</button>
+    <button class="luma-ctl" onclick="closeLuma()" aria-label="Minimize Coach Luma">—</button>
+  </div>
+  <div class="luma-msgs" id="luma-msgs"></div>
+  <div class="luma-chips" id="luma-chips"></div>
+  <div class="luma-input">
+    <input id="luma-text" type="text" placeholder="Ask Luma anything…" onkeydown="if(event.key==='Enter')sendLuma()">
+    <button class="luma-mic" id="luma-mic" onclick="micLuma()" title="Speak to Luma">🎙</button>
+    <button class="luma-send" onclick="sendLuma()">→</button>
+  </div>
+</div>
 
 <div class="toast" id="toast" role="status"></div>
 
 <script>
 /* ============================================================
-   WaiMore™ Demo v2 — vision + tiers + one completed journey
-   Discover → Account → Subscribe (simulated; Free skips) → Inside
+   WaiMore™ Demo v3 — vision + tiers + members world + Coach Luma
    Storage: browser localStorage only. No backend, no real payments.
+   Coach Luma: scripted demo brain + browser speech (Web Speech API).
+   Upgrade path: point askLuma() at the s4-luma-brain Worker and add
+   this origin to its CORS allow-list.
    ============================================================ */
 
-const USERS_KEY = 'waimore_users';
-const SESSION_KEY = 'waimore_session';
-let pendingUser = null;      // account details between signup and checkout
-let pendingTier = 'nav';     // tier selected on landing
-let pendingUpgrade = null;   // tier id when an existing member upgrades
+const USERS_KEY='waimore_users', SESSION_KEY='waimore_session',
+      IDEAS_KEY='waimore_ideas', ACT_KEY='waimore_activity';
+let pendingUser=null, pendingTier='nav', pendingUpgrade=null;
 
-/* ---------- tier model (single source of truth) ---------- */
-const TIERS = {
-  free:    { rank:0, name:'Free — Open Community', short:'Free', price:0,   founding:0,    promise:'Start where you are.' },
-  nav:     { rank:1, name:'S4 Navigator',          short:'Navigator', price:15,  founding:9.95, promise:'Stay guided.' },
-  builder: { rank:2, name:'S4 Builder',            short:'Builder',   price:49,  founding:39,   promise:'Build with us.' },
-  advisor: { rank:3, name:'S4 Advisor Circle',     short:'Advisor Circle', price:149, founding:99, promise:'Get closer to S4 strategic thinking.' }
+/* ---------- tiers ---------- */
+const TIERS={
+  free:{rank:0,name:'Free — Open Community',short:'Free',price:0,founding:0,promise:'Start where you are.'},
+  nav:{rank:1,name:'S4 Navigator',short:'Navigator',price:15,founding:9.95,promise:'Stay guided.'},
+  builder:{rank:2,name:'S4 Builder',short:'Builder',price:49,founding:39,promise:'Build with us.'},
+  advisor:{rank:3,name:'S4 Advisor Circle',short:'Advisor Circle',price:149,founding:99,promise:'Get closer to S4 strategic thinking.'}
 };
 
-/* ---------- tier explorer content (see / do / receive / leave with) ---------- */
-const EXPLORER = {
-  free: {
-    see: ['Community discussions and introductions','Quest previews and highlight summaries','Member wins — selected highlights'],
-    do:  ['Introduce yourself and join discussions','Take the teaser AI fluency assessment','Drop real problems in the Suggestion Box','Join AI research surveys'],
-    get: ['Orientation — how the community works','Your baseline AI readiness snapshot','A clear view of what each tier unlocks'],
+const EXPLORER={
+  free:{see:['Community discussions and introductions','Quest previews and highlight summaries','Member wins — selected highlights'],
+    do:['Introduce yourself and join discussions','Take the teaser AI fluency assessment','Drop real problems in the Suggestion Box','Join AI research surveys'],
+    get:['Orientation — how the community works','Your baseline AI readiness snapshot','A clear view of what each tier unlocks'],
     leave:['A sense of where you stand','Belonging before you spend a dollar'],
-    up: 'Upgrade when you want your full report, your roadmap, and Coach Luma™ guiding your next step.'
-  },
-  nav: {
-    see: ['Everything in Free','Navigator Library — full reports &  member assets','Quest outputs: what teams built and how'],
-    do:  ['Attend monthly office hours with S4 partners','Vote on which topics and Quests come next','Follow your personalized learning direction'],
-    get: ['Coach Luma™ micro-learnings matched to your gaps','Full assessment reports, not summaries','Member asset library access'],
-    leave:['Your personal AI &amp; career roadmap','Steady guided progress, month over month'],
-    up: 'Upgrade when reading about builds stops being enough — and you want to be on the team doing them.'
-  },
-  builder: {
-    see: ['Everything in Navigator','Builder Lab — live guided Quests','Workshops, playbooks, prompt packs, workflows'],
-    do:  ['Join solution Quest teams on real member problems','Attend workshops and demo days','Give and get peer feedback on builds'],
-    get: ['Guided challenge participation with S4 facilitation','Implementation notes and reusable assets','Proof badges tied to what you shipped'],
+    up:'Upgrade when you want your full report, your roadmap, and Coach Luma™ guiding your next step.'},
+  nav:{see:['Everything in Free','Navigator Library — full reports & member assets','Quest outputs: what teams built and how'],
+    do:['Attend monthly office hours with S4 partners','Vote on which topics and Quests come next','Follow your personalized learning direction'],
+    get:['Coach Luma™ micro-learnings matched to your gaps','Full assessment reports, not summaries','Member asset library access'],
+    leave:['Your personal AI & career roadmap','Steady guided progress, month over month'],
+    up:'Upgrade when reading about builds stops being enough — and you want to be on the team doing them.'},
+  builder:{see:['Everything in Navigator','Builder Lab — live guided Quests','Workshops, playbooks, prompt packs, workflows'],
+    do:['Join solution Quest teams on real member problems','Attend workshops and demo days','Give and get peer feedback on builds'],
+    get:['Guided challenge participation with S4 facilitation','Implementation notes and reusable assets','Proof badges tied to what you shipped'],
     leave:['Portfolio artifacts you can show an employer','Capability proof: Practitioner → Builder and beyond'],
-    up: 'Upgrade when your questions turn strategic: adoption, governance, transformation, what to build next.'
-  },
-  advisor: {
-    see: ['Everything in Builder','Full community intelligence reports','S4 product roadmap: Coach Luma™, Genie™, assessments','Complete Quest intelligence — outputs and the why'],
-    do:  ['Priority Ask-S4 — 24-hour target response','Monthly strategic roundtables and think tanks','Vote on which problems become official Quests','Join early product pilots'],
-    get: ['Monthly Advisor Brief — curated signal, not news','Strategic reviews of your roadmap or AI strategy','Small-group advisory sessions'],
+    up:'Upgrade when your questions turn strategic: adoption, governance, transformation, what to build next.'},
+  advisor:{see:['Everything in Builder','Full community intelligence reports','S4 product roadmap: Coach Luma™, Genie™, assessments','Complete Quest intelligence — outputs and the why'],
+    do:['Priority Ask-S4 — 24-hour target response','Monthly strategic roundtables and think tanks','Vote on which problems become official Quests','Join early product pilots'],
+    get:['Monthly Advisor Brief — curated signal, not news','Strategic reviews of your roadmap or AI strategy','Small-group advisory sessions'],
     leave:['Influence over what gets built','Insider status and the Advisor badge','Retainer-grade access at community pricing'],
-    up: 'Beyond this sits Premium: private, custom, implementation-heavy work with the S4 team.'
-  }
+    up:'Beyond this sits Premium: private, custom, implementation-heavy work with the S4 team.'}
 };
 
-/* ---------- dashboard spaces (gated by tier rank) ---------- */
-const SPACES = [
-  { name:'Start Here', min:0, desc:'Orientation, how the community works, and your first steps.' },
-  { name:'AI Journey Assessment', min:0, desc:'Your AI & career baseline. Free teaser; full report with Navigator.' },
-  { name:'Introductions & Discussion', min:0, desc:'Meet the community. Belonging is step one.' },
-  { name:'AI Problem Suggestion Box', min:0, desc:'Drop a real problem. It might become the next Quest.' },
-  { name:'Navigator Library', min:1, desc:'Full reports, member assets, and Coach Luma™ micro-learnings.' },
-  { name:'Builder Lab — Quests', min:2, desc:'Live guided solution builds. Teams, workshops, demo days.' },
-  { name:'Ask S4', min:3, desc:'Priority strategic Q&A with S4 partners. 24-hour target response.' },
-  { name:'Advisor Roundtable', min:3, desc:'Monthly strategic sessions, think tanks, and product pilots.' },
-  { name:'Member Wins & Demos', min:0, desc:'Proof, badges, and what members are shipping.' }
+/* ---------- seed content: quests, discussions, ideas, activity ---------- */
+const QUESTS=[
+  {id:'q1',title:'Meeting minutes → action items agent',stage:'Building',progress:65,teams:3,members:14,
+   desc:'Turn any meeting recording into owner-assigned action items in under two minutes.'},
+  {id:'q2',title:'Job-application tailoring workflow',stage:'Building',progress:40,teams:2,members:9,
+   desc:'Resume + posting in, tailored application kit out — with honesty guardrails.'},
+  {id:'q3',title:'Customer-support triage assistant',stage:'Selected',progress:10,teams:1,members:5,
+   desc:'Classify, prioritize, and draft first responses for a small-business inbox.'},
+  {id:'q4',title:'Prompt QA checklist for marketing teams',stage:'Shipped',progress:100,teams:2,members:11,
+   desc:'Shipped: a playbook + prompt pack now in the Navigator Library.'},
+  {id:'q5',title:'Weekly-report auto-compiler',stage:'Voting',progress:0,teams:0,members:0,
+   desc:'From the Idea Box: kill the 6-hour Friday report grind. Advisors are voting now.'}
 ];
-const UNLOCK_LABEL = { 1:'Navigator', 2:'Builder', 3:'Advisor Circle' };
-const UNLOCK_TIER  = { 1:'nav', 2:'builder', 3:'advisor' };
+const DISCUSSIONS=[
+  {id:'d1',title:'Introduce yourself — what brings you to WaiMore?',replies:87,last:'12 min ago',tag:'Start Here'},
+  {id:'d2',title:'What did your baseline score teach you?',replies:34,last:'1 hr ago',tag:'Assessment'},
+  {id:'d3',title:'Show your work: best prompt you wrote this week',replies:52,last:'3 hrs ago',tag:'Builder Lab'},
+  {id:'d4',title:'AI and your job: what are you actually worried about?',replies:61,last:'5 hrs ago',tag:'Career'},
+  {id:'d5',title:'Office hours follow-up: agent guardrails questions',replies:19,last:'yesterday',tag:'Office Hours'}
+];
+const SEED_IDEAS=[
+  {id:'i1',title:'Summarize contract changes between versions',by:'Priya N.',votes:23},
+  {id:'i2',title:'Grant-application first-draft assistant for nonprofits',by:'Marcus T.',votes:18},
+  {id:'i3',title:'Onboarding buddy-bot for new hires',by:'Dana K.',votes:12}
+];
+const SEED_ACT=[
+  {when:'2 min ago',who:'Jordan M.',what:'joined the Quest “Meeting minutes → action items agent”'},
+  {when:'26 min ago',who:'Elena R.',what:'earned the Practitioner badge — first Quest build shipped'},
+  {when:'1 hr ago',who:'S4 Team',what:'published the June Community Intelligence highlights'},
+  {when:'2 hrs ago',who:'Sam W.',what:'submitted a new problem to the Idea Box'},
+  {when:'4 hrs ago',who:'Aisha B.',what:'completed her AI & Career baseline — level: Practitioner'},
+  {when:'yesterday',who:'Builder Team 2',what:'demoed the job-application workflow at demo day'}
+];
+
+/* ---------- assessment ---------- */
+const QUESTIONS=[
+  {q:'How often do you use AI tools in your actual work?',dim:'fluency',
+   opts:[['Rarely or never',0],['Occasionally, for simple things',1],['Weekly, for real tasks',2],['Daily — it\u2019s part of my workflow',3]]},
+  {q:'When AI gives you an answer, what do you usually do?',dim:'judgment',
+   opts:[['Use it as-is',0],['Skim it for obvious errors',1],['Verify key facts before using',2],['Verify, then iterate the prompt to improve it',3]]},
+  {q:'Have you ever built a repeatable AI workflow (not just one-off prompts)?',dim:'workflow',
+   opts:[['Not sure what that means',0],['No, but I want to',1],['One or two simple ones',2],['Yes — others use workflows I built',3]]},
+  {q:'How would you explain what AI can and can\u2019t do to a colleague?',dim:'fluency',
+   opts:[['I\u2019d struggle to',0],['In broad strokes',1],['Clearly, with examples',2],['Clearly, including failure modes and limits',3]]},
+  {q:'How clear are you on how AI affects YOUR role in the next 2 years?',dim:'career',
+   opts:[['Haven\u2019t thought about it',0],['Vaguely worried, no plan',1],['I see the risks and some options',2],['I have a plan I\u2019m acting on',3]]},
+  {q:'When you write a prompt and it fails, you…',dim:'prompting',
+   opts:[['Give up or Google instead',0],['Try random rewording',1],['Change one thing at a time',2],['Diagnose: context, constraints, examples, format',3]]}
+];
+const DIM_LABEL={fluency:'AI fluency',judgment:'AI judgment & verification',workflow:'Workflow building',career:'Career positioning',prompting:'Prompt craft'};
+const MODULES={
+  prompting:[['The 4-part prompt: context, constraint, example, format','5 min'],['Fixing a failing prompt: one variable at a time','4 min']],
+  judgment:[['When to trust AI output — and when never to','6 min'],['The 90-second verification habit','4 min']],
+  workflow:[['Your first reusable workflow: from prompt to system','7 min'],['Handoffs: where humans stay in the loop','5 min']],
+  career:[['Your role + AI: mapping the real exposure','6 min'],['From at-risk tasks to AI-amplified value','7 min']],
+  fluency:[['What AI actually does (no math required)','5 min'],['The tool landscape in 6 minutes','6 min']]
+};
+const LEVELS=[[0,'Explorer'],[7,'Practitioner'],[12,'Builder'],[16,'Strategist']];
+let assessState=null; // {idx, answers:[{dim,score}]}
 
 /* ---------- storage helpers ---------- */
-function loadUsers(){ try{ return JSON.parse(localStorage.getItem(USERS_KEY)) || {}; }catch(e){ return {}; } }
-function saveUsers(u){ localStorage.setItem(USERS_KEY, JSON.stringify(u)); }
-function getSession(){ try{ return JSON.parse(localStorage.getItem(SESSION_KEY)); }catch(e){ return null; } }
-function setSession(email){ localStorage.setItem(SESSION_KEY, JSON.stringify({email, at: Date.now()})); }
-function clearSession(){ localStorage.removeItem(SESSION_KEY); }
+function loadUsers(){try{return JSON.parse(localStorage.getItem(USERS_KEY))||{}}catch(e){return{}}}
+function saveUsers(u){localStorage.setItem(USERS_KEY,JSON.stringify(u))}
+function getSession(){try{return JSON.parse(localStorage.getItem(SESSION_KEY))}catch(e){return null}}
+function setSession(email){localStorage.setItem(SESSION_KEY,JSON.stringify({email,at:Date.now()}))}
+function clearSession(){localStorage.removeItem(SESSION_KEY)}
+function currentUser(){const s=getSession();if(!s)return null;const u=loadUsers()[s.email];return u?{...u,email:s.email}:null}
+function updateUser(email,fn){const users=loadUsers();if(!users[email])return;fn(users[email]);saveUsers(users)}
+function loadIdeas(){try{return JSON.parse(localStorage.getItem(IDEAS_KEY))||[]}catch(e){return[]}}
+function saveIdeas(l){localStorage.setItem(IDEAS_KEY,JSON.stringify(l))}
+function loadActs(){try{return JSON.parse(localStorage.getItem(ACT_KEY))||[]}catch(e){return[]}}
+function pushAct(what){const l=loadActs();const u=currentUser();l.unshift({when:'just now',who:u?u.name.split(' ')[0]+' (you)':'You',what});localStorage.setItem(ACT_KEY,JSON.stringify(l.slice(0,20)))}
 
-/* map any stored plan id (incl. v1 'monthly') to a tier */
-function tierOf(user){
-  const p = user && user.subscription ? user.subscription.plan : 'free';
-  if (TIERS[p]) return p;
-  if (p === 'monthly') return 'nav'; // legacy v1 accounts
-  return 'free';
-}
+function tierOf(user){const p=user&&user.subscription?user.subscription.plan:'free';
+  if(TIERS[p])return p; if(p==='monthly')return 'nav'; return 'free'}
 
 /* ---------- password hashing (demo-grade) ---------- */
 async function hashPassword(pw){
-  if (window.crypto && crypto.subtle){
-    const data = new TextEncoder().encode('waimore::' + pw);
-    const buf = await crypto.subtle.digest('SHA-256', data);
-    return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2,'0')).join('');
+  if(window.crypto&&crypto.subtle){
+    const data=new TextEncoder().encode('waimore::'+pw);
+    const buf=await crypto.subtle.digest('SHA-256',data);
+    return Array.from(new Uint8Array(buf)).map(b=>b.toString(16).padStart(2,'0')).join('');
   }
-  let h = 0;
-  for (let i = 0; i < pw.length; i++){ h = ((h << 5) - h + pw.charCodeAt(i)) | 0; }
-  return 'fb_' + h.toString(16);
+  let h=0;for(let i=0;i<pw.length;i++){h=((h<<5)-h+pw.charCodeAt(i))|0}return 'fb_'+h.toString(16);
 }
 
-/* ---------- view + journey rail ---------- */
-const JOURNEY = { landing:1, login:1, signup:2, checkout:3, dashboard:4 };
-
+/* ---------- views + journey rail ---------- */
+const JOURNEY={landing:1,login:1,signup:2,checkout:3,dashboard:4};
 function go(view){
-  document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
-  document.getElementById('view-' + view).classList.add('active');
-  const step = JOURNEY[view] || 1;
-  document.querySelectorAll('.j-step').forEach(el => {
-    const n = +el.dataset.j;
-    el.classList.toggle('done', n < step || (view === 'dashboard' && n <= 4));
-    el.classList.toggle('here', n === step && view !== 'dashboard');
+  document.querySelectorAll('.view').forEach(v=>v.classList.remove('active'));
+  document.getElementById('view-'+view).classList.add('active');
+  const step=JOURNEY[view]||1;
+  document.querySelectorAll('.j-step').forEach(el=>{
+    const n=+el.dataset.j;
+    el.classList.toggle('done',n<step||(view==='dashboard'&&n<=4));
+    el.classList.toggle('here',n===step&&view!=='dashboard');
   });
-  document.querySelectorAll('.j-line').forEach(el => {
-    el.classList.toggle('done', +el.dataset.jl < step);
-  });
+  document.querySelectorAll('.j-line').forEach(el=>el.classList.toggle('done',+el.dataset.jl<step));
   updateNav();
+  lumaVisibility(view);
   window.scrollTo({top:0});
 }
-
+function goHome(){getSession()?enterDashboard():go('landing')}
 function updateNav(){
-  const btn = document.getElementById('nav-auth');
-  if (getSession()){ btn.textContent = 'Dashboard'; btn.onclick = () => enterDashboard(); }
-  else { btn.textContent = 'Log in'; btn.onclick = () => go('login'); }
+  const btn=document.getElementById('nav-auth');
+  if(getSession()){btn.textContent='Dashboard';btn.onclick=()=>enterDashboard()}
+  else{btn.textContent='Log in';btn.onclick=()=>go('login')}
 }
-
-function toast(msg){
-  const t = document.getElementById('toast');
-  t.textContent = msg; t.classList.add('show');
-  setTimeout(() => t.classList.remove('show'), 2600);
-}
-function showError(id, msg){ const el=document.getElementById(id); el.textContent=msg; el.classList.add('show'); }
-function clearError(id){ document.getElementById(id).classList.remove('show'); }
+function toast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'),2600)}
+function showError(id,msg){const el=document.getElementById(id);el.textContent=msg;el.classList.add('show')}
+function clearError(id){document.getElementById(id).classList.remove('show')}
 
 /* ---------- tier selection & explorer ---------- */
 function selectTier(id){
-  pendingTier = id;
-  const t = TIERS[id];
-  const session = getSession();
-  if (session){
-    // existing member choosing a tier = upgrade/change path
-    if (id === 'free'){ toast('You already have an account — manage your plan from the dashboard.'); enterDashboard(); return; }
-    startUpgrade(id); return;
+  pendingTier=id;const t=TIERS[id];
+  if(getSession()){
+    if(id==='free'){toast('You already have an account — manage your plan from the dashboard.');enterDashboard();return}
+    startUpgrade(id);return;
   }
-  document.getElementById('signup-tier').textContent = t.name;
-  document.getElementById('signup-btn').textContent = id === 'free' ? 'Create free account' : 'Continue to payment';
-  document.getElementById('signup-lead').textContent = id === 'free'
-    ? 'One step — no payment needed for the free community.'
-    : 'Step 1 of 2 — the payment step comes next.';
+  document.getElementById('signup-tier').textContent=t.name;
+  document.getElementById('signup-btn').textContent=id==='free'?'Create free account':'Continue to payment';
+  document.getElementById('signup-lead').textContent=id==='free'
+    ?'One step — no payment needed for the free community.'
+    :'Step 1 of 2 — the payment step comes next.';
   go('signup');
 }
-
 function showTier(id){
-  document.querySelectorAll('.exp-tab').forEach(b => b.classList.toggle('on', b.dataset.tier === id));
-  const c = EXPLORER[id], t = TIERS[id];
-  const fill = (elId, items) => {
-    document.getElementById(elId).innerHTML = items.map(i => '<li>' + i + '</li>').join('');
-  };
-  fill('exp-see', c.see); fill('exp-do', c.do); fill('exp-get', c.get); fill('exp-leave', c.leave);
-  const join = document.getElementById('exp-join');
-  join.textContent = id === 'free' ? 'Join free' : 'Join ' + t.short + (t.founding ? ' — $' + t.founding + '/mo founding' : '');
-  join.onclick = () => selectTier(id);
-  document.getElementById('exp-up').textContent = c.up;
+  document.querySelectorAll('.exp-tab').forEach(b=>b.classList.toggle('on',b.dataset.tier===id));
+  const c=EXPLORER[id],t=TIERS[id];
+  const fill=(elId,items)=>{document.getElementById(elId).innerHTML=items.map(i=>'<li>'+i+'</li>').join('')};
+  fill('exp-see',c.see);fill('exp-do',c.do);fill('exp-get',c.get);fill('exp-leave',c.leave);
+  const join=document.getElementById('exp-join');
+  join.textContent=id==='free'?'Join free':'Join '+t.short+(t.founding?' — $'+t.founding+'/mo founding':'');
+  join.onclick=()=>selectTier(id);
+  document.getElementById('exp-up').textContent=c.up;
 }
 
-/* ---------- signup ---------- */
+/* ---------- signup / checkout / login ---------- */
 async function handleSignup(){
   clearError('signup-error');
-  const name = document.getElementById('su-name').value.trim();
-  const email = document.getElementById('su-email').value.trim().toLowerCase();
-  const pass = document.getElementById('su-pass').value;
-
-  if (!name){ showError('signup-error','Enter your full name.'); return; }
-  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){ showError('signup-error','Enter a valid email address.'); return; }
-  if (pass.length < 8){ showError('signup-error','Password must be at least 8 characters.'); return; }
-
-  const users = loadUsers();
-  if (users[email]){ showError('signup-error','An account with that email already exists. Log in instead.'); return; }
-
-  pendingUser = { name, email, passHash: await hashPassword(pass) };
-
-  if (pendingTier === 'free'){
-    createUser(pendingUser, 'free');
-    pendingUser = null;
-    enterDashboard();
-    toast('Welcome to the WaiMore community!');
+  const name=document.getElementById('su-name').value.trim();
+  const email=document.getElementById('su-email').value.trim().toLowerCase();
+  const pass=document.getElementById('su-pass').value;
+  if(!name){showError('signup-error','Enter your full name.');return}
+  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){showError('signup-error','Enter a valid email address.');return}
+  if(pass.length<8){showError('signup-error','Password must be at least 8 characters.');return}
+  const users=loadUsers();
+  if(users[email]){showError('signup-error','An account with that email already exists. Log in instead.');return}
+  pendingUser={name,email,passHash:await hashPassword(pass)};
+  if(pendingTier==='free'){
+    createUser(pendingUser,'free');pendingUser=null;
+    enterDashboard();toast('Welcome to the WaiMore community!');
+    lumaGreet(true);
     return;
   }
-  renderCheckout(pendingTier, false);
-  go('checkout');
+  renderCheckout(pendingTier,false);go('checkout');
 }
-
-/* ---------- checkout (new member or upgrade) ---------- */
-function renderCheckout(tierId, isUpgrade){
-  const t = TIERS[tierId];
-  document.getElementById('co-title').textContent = isUpgrade ? 'Upgrade to ' + t.short : 'Start your membership';
-  document.getElementById('co-lead').textContent = isUpgrade
-    ? 'Your account stays — only your level changes.'
-    : "Step 2 of 2 — you're one click from inside.";
-  document.getElementById('co-plan').textContent = t.name + ' (monthly)';
-  document.getElementById('co-price').textContent = '$' + t.price.toFixed(2) + ' / month';
-  document.getElementById('co-discount').textContent = '– $' + (t.price - t.founding).toFixed(2) + ' (founding)';
-  document.getElementById('co-total').textContent = '$' + t.founding.toFixed(2);
-  document.getElementById('pay-btn').textContent =
-    (isUpgrade ? 'Upgrade — $' : 'Start subscription — $') + t.founding + '/mo';
+function renderCheckout(tierId,isUpgrade){
+  const t=TIERS[tierId];
+  document.getElementById('co-title').textContent=isUpgrade?'Upgrade to '+t.short:'Start your membership';
+  document.getElementById('co-lead').textContent=isUpgrade?'Your account stays — only your level changes.':"Step 2 of 2 — you're one click from inside.";
+  document.getElementById('co-plan').textContent=t.name+' (monthly)';
+  document.getElementById('co-price').textContent='$'+t.price.toFixed(2)+' / month';
+  document.getElementById('co-discount').textContent='– $'+(t.price-t.founding).toFixed(2)+' (founding)';
+  document.getElementById('co-total').textContent='$'+t.founding.toFixed(2);
+  document.getElementById('pay-btn').textContent=(isUpgrade?'Upgrade — $':'Start subscription — $')+t.founding+'/mo';
 }
-
 function startUpgrade(tierId){
-  const session = getSession();
-  if (!session){ selectTier(tierId); return; }
-  const user = loadUsers()[session.email];
-  const current = TIERS[tierOf(user)];
-  if (TIERS[tierId].rank <= current.rank){ toast('You already have ' + current.short + ' access.'); enterDashboard(); return; }
-  pendingUpgrade = tierId;
-  renderCheckout(tierId, true);
-  go('checkout');
+  const session=getSession();
+  if(!session){selectTier(tierId);return}
+  const user=loadUsers()[session.email];
+  const current=TIERS[tierOf(user)];
+  if(TIERS[tierId].rank<=current.rank){toast('You already have '+current.short+' access.');enterDashboard();return}
+  pendingUpgrade=tierId;renderCheckout(tierId,true);go('checkout');
 }
-
-function cancelCheckout(){
-  if (pendingUpgrade){ pendingUpgrade = null; enterDashboard(); }
-  else { go('landing'); }
+function cancelCheckout(){if(pendingUpgrade){pendingUpgrade=null;enterDashboard()}else{go('landing')}}
+function createUser(p,tierId){
+  const users=loadUsers();const now=Date.now();
+  users[p.email]={name:p.name,passHash:p.passHash,createdAt:now,
+    joinedQuests:[],joinedDiscs:[],votes:[],assessment:null,journey:null,
+    subscription:{plan:tierId,price:TIERS[tierId].founding,status:'active',startedAt:now}};
+  saveUsers(users);setSession(p.email);
 }
-
-function createUser(p, tierId){
-  const users = loadUsers();
-  const now = Date.now();
-  users[p.email] = {
-    name: p.name, passHash: p.passHash, createdAt: now,
-    subscription: { plan: tierId, price: TIERS[tierId].founding, status:'active', startedAt: now }
-  };
-  saveUsers(users);
-  setSession(p.email);
-}
-
 function handleCheckout(){
-  const btn = document.getElementById('pay-btn');
-  btn.disabled = true; const label = btn.textContent; btn.textContent = 'Processing…';
-
-  setTimeout(() => {
-    btn.disabled = false; btn.textContent = label;
-    if (pendingUpgrade){
-      const session = getSession();
-      const users = loadUsers();
-      const u = users[session.email];
-      u.subscription = { plan: pendingUpgrade, price: TIERS[pendingUpgrade].founding, status:'active', startedAt: Date.now() };
-      saveUsers(users);
-      const name = TIERS[pendingUpgrade].short;
-      pendingUpgrade = null;
-      enterDashboard();
-      toast('Upgraded to ' + name + ' — new spaces unlocked.');
+  const btn=document.getElementById('pay-btn');
+  btn.disabled=true;const label=btn.textContent;btn.textContent='Processing…';
+  setTimeout(()=>{
+    btn.disabled=false;btn.textContent=label;
+    if(pendingUpgrade){
+      const session=getSession();
+      updateUser(session.email,u=>{u.subscription={plan:pendingUpgrade,price:TIERS[pendingUpgrade].founding,status:'active',startedAt:Date.now()}});
+      const name=TIERS[pendingUpgrade].short;pendingUpgrade=null;
+      enterDashboard();toast('Upgraded to '+name+' — new spaces unlocked.');
+      lumaSay('Nice upgrade! As a '+name+' member, new rooms just opened for you. Want me to point you to the best one to start in?');
       return;
     }
-    if (!pendingUser){ go('signup'); return; }
-    createUser(pendingUser, pendingTier);
-    pendingUser = null;
-    enterDashboard();
-    toast('Subscription started — welcome to WaiMore!');
-  }, 1200);
+    if(!pendingUser){go('signup');return}
+    createUser(pendingUser,pendingTier);pendingUser=null;
+    enterDashboard();toast('Subscription started — welcome to WaiMore!');
+    lumaGreet(true);
+  },1200);
 }
-
-/* ---------- login / logout ---------- */
 async function handleLogin(){
   clearError('login-error');
-  const email = document.getElementById('li-email').value.trim().toLowerCase();
-  const pass = document.getElementById('li-pass').value;
-  const users = loadUsers();
-  const user = users[email];
-  if (!user){ showError('login-error','No account found for that email. Create one first.'); return; }
-  const hash = await hashPassword(pass);
-  if (hash !== user.passHash){ showError('login-error','Incorrect password. Try again.'); return; }
-  setSession(email);
-  enterDashboard();
-  toast('Logged in — welcome back, ' + user.name.split(' ')[0] + '.');
+  const email=document.getElementById('li-email').value.trim().toLowerCase();
+  const pass=document.getElementById('li-pass').value;
+  const users=loadUsers();const user=users[email];
+  if(!user){showError('login-error','No account found for that email. Create one first.');return}
+  const hash=await hashPassword(pass);
+  if(hash!==user.passHash){showError('login-error','Incorrect password. Try again.');return}
+  setSession(email);enterDashboard();
+  toast('Logged in — welcome back, '+user.name.split(' ')[0]+'.');
+  lumaGreet(false);
 }
+function handleLogout(){clearSession();closeLuma();document.getElementById('luma-fab').classList.remove('show');go('landing');toast('Logged out.')}
 
-function handleLogout(){ clearSession(); go('landing'); toast('Logged out.'); }
-
-/* ---------- dashboard ---------- */
+/* ---------- members area ---------- */
+function showPanel(id){
+  document.querySelectorAll('.m-tab').forEach(b=>b.classList.toggle('on',b.dataset.m===id));
+  document.querySelectorAll('.m-panel').forEach(p=>p.classList.remove('active'));
+  document.getElementById('panel-'+id).classList.add('active');
+  if(id==='home')renderHome();
+  if(id==='quests')renderQuests();
+  if(id==='discussions')renderDiscs();
+  if(id==='ideas')renderIdeas();
+  if(id==='assess')renderAssess();
+  if(id==='journey')renderJourney();
+}
 function enterDashboard(){
-  const session = getSession();
-  if (!session){ go('login'); return; }
-  const user = loadUsers()[session.email];
-  if (!user){ clearSession(); go('login'); return; }
-
-  const tierId = tierOf(user), t = TIERS[tierId];
-  document.getElementById('dash-welcome').textContent = 'Welcome, ' + user.name.split(' ')[0];
-  document.getElementById('dash-status').textContent = t.short + ' member';
-  document.getElementById('dash-plan').textContent = tierId === 'free' ? 'Free' : '$' + (user.subscription.price ?? t.founding) + ' / month';
-
-  const since = new Date(user.createdAt);
-  document.getElementById('dash-since').textContent = since.toLocaleDateString(undefined,{month:'short',day:'numeric',year:'numeric'});
-  if (tierId === 'free'){
-    document.getElementById('dash-billing').textContent = t.name + ' — upgrade anytime, one click.';
-  } else {
-    const nextBill = new Date(user.subscription.startedAt + 30*24*60*60*1000);
-    document.getElementById('dash-billing').textContent = t.name + ' · next billing ' + nextBill.toLocaleDateString(undefined,{month:'long',day:'numeric',year:'numeric'});
-  }
-
-  // render spaces gated by tier rank
-  const grid = document.getElementById('spaces-grid');
-  grid.innerHTML = '';
-  SPACES.forEach(s => {
-    const open = t.rank >= s.min;
-    const card = document.createElement('div');
-    card.className = 'dash-card' + (open ? '' : ' locked');
-    card.innerHTML =
-      '<h3>' + s.name +
-      ' <span class="space-tag ' + (open ? 'tag-open' : 'tag-lock') + '">' +
-      (open ? 'Open' : UNLOCK_LABEL[s.min]) + '</span></h3>' +
-      '<p>' + s.desc + '</p>' +
-      (open ? '' :
-        '<button class="up-btn" onclick="startUpgrade(\'' + UNLOCK_TIER[s.min] + '\')">Unlock with ' + UNLOCK_LABEL[s.min] + '</button>');
+  const u=currentUser();
+  if(!u){go('login');return}
+  const tierId=tierOf(u),t=TIERS[tierId];
+  document.getElementById('dash-welcome').textContent='Welcome, '+u.name.split(' ')[0];
+  document.getElementById('dash-status').textContent=t.short+' member';
+  go('dashboard');
+  showPanel('home');
+  document.getElementById('luma-fab').classList.add('show');
+}
+function renderHome(){
+  const u=currentUser();if(!u)return;
+  const tierId=tierOf(u),t=TIERS[tierId];
+  document.getElementById('dash-plan').textContent=tierId==='free'?'Free':'$'+(u.subscription.price??t.founding)+' / month';
+  if(tierId==='free'){document.getElementById('dash-billing').textContent=t.name+' — upgrade anytime, one click.'}
+  else{const nb=new Date(u.subscription.startedAt+30*24*60*60*1000);
+    document.getElementById('dash-billing').textContent=t.name+' · next billing '+nb.toLocaleDateString(undefined,{month:'long',day:'numeric',year:'numeric'})}
+  const lvl=u.assessment?u.assessment.level:'Explorer';
+  document.getElementById('dash-level').textContent=lvl;
+  document.getElementById('dash-level-note').textContent=u.assessment
+    ?'Baseline score '+u.assessment.score+'/18 · focus: '+u.assessment.focus.map(f=>DIM_LABEL[f]).join(', ')
+    :'Take your baseline to set your level and start the ladder.';
+  // engagement suggestion
+  const sBtn=document.getElementById('dash-suggest-btn');
+  let sTxt,sGo;
+  if(!u.assessment){sTxt='Start with your AI & Career baseline — 6 questions, 2 minutes. Everything personalizes from there.';sGo=()=>showPanel('assess')}
+  else if(u.journey&&u.journey.some(m=>!m.done)){sTxt='Your next micro-learning is queued in My Journey. '+(u.journey.find(m=>!m.done).title)+'.';sGo=()=>showPanel('journey')}
+  else if(TIERS[tierOf(u)].rank>=2&&(!u.joinedQuests||!u.joinedQuests.length)){sTxt='You\u2019re Builder tier with no Quest yet — the minutes-to-actions team has an open seat.';sGo=()=>showPanel('quests')}
+  else{sTxt='The introductions thread is active right now — a two-line hello goes a long way.';sGo=()=>showPanel('discussions')}
+  document.getElementById('dash-suggest').textContent=sTxt;sBtn.onclick=sGo;
+  // activity feed
+  const feed=[...loadActs(),...SEED_ACT];
+  document.getElementById('activity-feed').innerHTML=feed.map(a=>
+    '<li><span class="when">'+a.when+'</span><span><span class="who">'+a.who+'</span> '+a.what+'</span></li>').join('');
+}
+function renderQuests(){
+  const u=currentUser();if(!u)return;
+  const rank=TIERS[tierOf(u)].rank;
+  const grid=document.getElementById('quests-grid');
+  grid.innerHTML='';
+  QUESTS.forEach(q=>{
+    const joined=(u.joinedQuests||[]).includes(q.id);
+    const stCls={Building:'st-building',Selected:'st-selected',Voting:'st-voting',Shipped:'st-shipped'}[q.stage];
+    let action='';
+    if(q.stage==='Shipped'){action='<span class="joined-chip">In the Library</span>'}
+    else if(q.stage==='Voting'){
+      action=rank>=3
+        ?'<button class="btn btn-primary btn-xs" onclick="voteQuest(\''+q.id+'\')">Vote to select</button>'
+        :'<button class="up-btn" onclick="startUpgrade(\'advisor\')">Advisors vote — upgrade</button>';
+    }
+    else if(joined){action='<span class="joined-chip">✓ You\u2019re on a team</span>'}
+    else{
+      action=rank>=2
+        ?'<button class="btn btn-primary btn-xs" onclick="joinQuest(\''+q.id+'\')">Join a team</button>'
+        :'<button class="up-btn" onclick="startUpgrade(\'builder\')">Unlock with Builder</button>';
+    }
+    const card=document.createElement('div');card.className='dash-card';
+    card.innerHTML='<h3>'+q.title+' <span class="stage '+stCls+'">'+q.stage+'</span></h3>'+
+      '<p>'+q.desc+'</p>'+
+      '<div class="quest-meta">'+q.teams+' teams · '+q.members+' members'+(q.stage!=='Voting'?' · '+q.progress+'%':'')+'</div>'+
+      (q.stage!=='Voting'?'<div class="q-progress"><div style="width:'+q.progress+'%"></div></div>':'')+action;
     grid.appendChild(card);
   });
+}
+function joinQuest(id){
+  const s=getSession();
+  updateUser(s.email,u=>{u.joinedQuests=u.joinedQuests||[];if(!u.joinedQuests.includes(id))u.joinedQuests.push(id)});
+  const q=QUESTS.find(x=>x.id===id);
+  pushAct('joined the Quest \u201c'+q.title+'\u201d');
+  renderQuests();toast('You\u2019re on the team. Kickoff details in Builder Lab.');
+  lumaSay('You just joined \u201c'+q.title+'\u201d — great pick. First build session is guided, so come as you are. Shipping this earns your Practitioner badge.');
+}
+function voteQuest(id){
+  const s=getSession();let already=false;
+  updateUser(s.email,u=>{u.votes=u.votes||[];if(u.votes.includes(id)){already=true}else{u.votes.push(id)}});
+  if(already){toast('You already voted for this Quest.');return}
+  pushAct('voted to select the next Quest');
+  toast('Vote recorded — Advisors steer what gets built.');
+}
+function renderDiscs(){
+  const u=currentUser();if(!u)return;
+  const list=document.getElementById('disc-list');
+  list.innerHTML='';
+  DISCUSSIONS.forEach(d=>{
+    const joined=(u.joinedDiscs||[]).includes(d.id);
+    const row=document.createElement('div');row.className='disc-row';
+    row.innerHTML='<div><h4>'+d.title+'</h4><p>'+d.replies+' replies · last active '+d.last+' · '+d.tag+'</p></div>'+
+      (joined?'<span class="joined-chip">✓ Joined</span>'
+        :'<button class="btn btn-primary btn-xs" onclick="joinDisc(\''+d.id+'\')">Join discussion</button>');
+    list.appendChild(row);
+  });
+}
+function joinDisc(id){
+  const s=getSession();
+  updateUser(s.email,u=>{u.joinedDiscs=u.joinedDiscs||[];if(!u.joinedDiscs.includes(id))u.joinedDiscs.push(id)});
+  const d=DISCUSSIONS.find(x=>x.id===id);
+  pushAct('joined the discussion \u201c'+d.title+'\u201d');
+  renderDiscs();toast('You\u2019re in — say hello.');
+}
+function renderIdeas(){
+  const u=currentUser();if(!u)return;
+  const all=[...loadIdeas(),...SEED_IDEAS];
+  const mine=u.votes||[];
+  document.getElementById('ideas-list').innerHTML=all.map(i=>
+    '<div class="idea-row">'+
+    '<button class="vote-btn'+(mine.includes(i.id)?' voted':'')+'" onclick="voteIdea(\''+i.id+'\')">▲ '+i.votes+'</button>'+
+    '<div class="grow"><h4>'+i.title+'</h4><p>submitted by '+i.by+'</p></div></div>').join('');
+}
+function submitIdea(){
+  const title=document.getElementById('idea-title').value.trim();
+  if(!title){toast('Give your problem a one-line title first.');return}
+  const u=currentUser();
+  const ideas=loadIdeas();
+  ideas.unshift({id:'u'+Date.now(),title,by:u.name.split(' ')[0]+' (you)',votes:1});
+  saveIdeas(ideas);
+  document.getElementById('idea-title').value='';document.getElementById('idea-detail').value='';
+  pushAct('submitted a new problem to the Idea Box');
+  renderIdeas();toast('Submitted — the community can now vote on it.');
+  lumaSay('Love it. Your problem is in the Idea Box. If it gathers votes, Advisors can select it as an official Quest — and you\u2019d get a seat on the build.');
+}
+function voteIdea(id){
+  const s=getSession();let already=false;
+  updateUser(s.email,u=>{u.votes=u.votes||[];if(u.votes.includes(id)){already=true}else{u.votes.push(id)}});
+  if(already){toast('Already voted for this one.');return}
+  const ideas=loadIdeas();
+  const found=ideas.find(i=>i.id===id);
+  if(found){found.votes++;saveIdeas(ideas)}else{const s2=SEED_IDEAS.find(i=>i.id===id);if(s2)s2.votes++}
+  renderIdeas();
+}
 
-  go('dashboard');
+/* ---------- assessment ---------- */
+function renderAssess(){
+  const u=currentUser();if(!u)return;
+  const box=document.getElementById('assess-box');
+  if(u.assessment&&!assessState){
+    const a=u.assessment;
+    box.innerHTML='<div class="result-band"><p class="mono" style="font-size:.7rem;letter-spacing:.1em">YOUR BASELINE</p>'+
+      '<div class="big">'+a.level+' — '+a.score+'/18</div>'+
+      '<p>Focus areas: '+a.focus.map(f=>DIM_LABEL[f]).join(' · ')+'</p></div>'+
+      '<p class="section-sub">Your micro-learning journey was built from this baseline. Retake anytime — your journey re-personalizes.</p>'+
+      '<button class="btn btn-primary btn-sm" onclick="startAssess()">Retake baseline</button> '+
+      '<button class="btn btn-ghost btn-sm" onclick="showPanel(\'journey\')">Go to My Journey</button>';
+    return;
+  }
+  if(!assessState){
+    box.innerHTML='<div class="dash-card"><h3>AI &amp; Career Baseline</h3>'+
+      '<p>Six questions, two minutes. This sets your proof level and builds your personalized micro-learning journey with Coach Luma. Honest answers beat impressive ones.</p>'+
+      '<button class="btn btn-primary btn-sm" style="margin-top:12px" onclick="startAssess()">Start my baseline</button></div>';
+    return;
+  }
+  const i=assessState.idx,Q=QUESTIONS[i];
+  box.innerHTML='<p class="mono" style="font-size:.72rem;letter-spacing:.1em;color:var(--ink-soft);margin-bottom:8px">QUESTION '+(i+1)+' OF '+QUESTIONS.length+'</p>'+
+    '<div class="q-progress" style="max-width:360px"><div style="width:'+(i/QUESTIONS.length*100)+'%"></div></div>'+
+    '<h3 style="margin:14px 0 16px;font-size:1.2rem">'+Q.q+'</h3>'+
+    Q.opts.map((o,n)=>'<button class="assess-opt" onclick="answerAssess('+n+')">'+o[0]+'</button>').join('');
+}
+function startAssess(){assessState={idx:0,answers:[]};renderAssess()}
+function answerAssess(n){
+  const Q=QUESTIONS[assessState.idx];
+  assessState.answers.push({dim:Q.dim,score:Q.opts[n][1]});
+  assessState.idx++;
+  if(assessState.idx<QUESTIONS.length){renderAssess();return}
+  // score it
+  const score=assessState.answers.reduce((a,b)=>a+b.score,0);
+  let level='Explorer';LEVELS.forEach(([min,name])=>{if(score>=min)level=name});
+  const byDim={};assessState.answers.forEach(a=>{byDim[a.dim]=(byDim[a.dim]??0)+a.score});
+  const focus=Object.entries(byDim).sort((a,b)=>a[1]-b[1]).slice(0,2).map(e=>e[0]);
+  const journey=[];
+  focus.forEach(f=>(MODULES[f]||[]).forEach(m=>journey.push({title:m[0],mins:m[1],dim:f,done:false})));
+  journey.push({title:'Apply it: your first Quest contribution',mins:'live',dim:'workflow',done:false});
+  const s=getSession();
+  updateUser(s.email,u=>{u.assessment={score,level,focus,at:Date.now()};u.journey=journey});
+  pushAct('completed the AI & Career baseline — level: '+level);
+  assessState=null;
+  renderAssess();
+  toast('Baseline complete — you\u2019re a '+level+'.');
+  lumaSay('Baseline done — you scored '+score+' out of 18, which puts you at '+level+'. Your biggest wins are waiting in '+DIM_LABEL[focus[0]]+' and '+DIM_LABEL[focus[1]]+', so I built your micro-learning journey around exactly that. It\u2019s in My Journey — the first one takes five minutes.');
+}
+function renderJourney(){
+  const u=currentUser();if(!u)return;
+  const box=document.getElementById('journey-box');
+  if(!u.journey){
+    box.innerHTML='<div class="dash-card"><h3>No journey yet</h3>'+
+      '<p>Your micro-learning journey is personalized from your baseline. Take the two-minute assessment and Coach Luma builds it for you.</p>'+
+      '<button class="btn btn-primary btn-sm" style="margin-top:12px" onclick="showPanel(\'assess\')">Take my baseline</button></div>';
+    return;
+  }
+  const done=u.journey.filter(m=>m.done).length,total=u.journey.length;
+  box.innerHTML='<div class="result-band"><p class="mono" style="font-size:.7rem;letter-spacing:.1em">MY MICRO-LEARNING JOURNEY · CURATED BY COACH LUMA™</p>'+
+    '<div class="big">'+done+' of '+total+' complete</div>'+
+    '<div class="q-progress" style="max-width:360px;background:#fff"><div style="width:'+(done/total*100)+'%"></div></div>'+
+    '<p>Bite-size on purpose. One a day beats a binge.</p></div>'+
+    u.journey.map((m,i)=>
+      '<div class="mod-row'+(m.done?' done-mod':'')+'">'+
+      '<button class="mod-check'+(m.done?' on':'')+'" onclick="toggleModule('+i+')" aria-label="Mark complete">'+(m.done?'✓':'')+'</button>'+
+      '<div class="grow"><h4>'+(m.done?'<s>'+m.title+'</s>':m.title)+'</h4>'+
+      '<p>'+DIM_LABEL[m.dim]+' · '+m.mins+'</p></div></div>').join('');
+}
+function toggleModule(i){
+  const s=getSession();let allDone=false,title='';
+  updateUser(s.email,u=>{u.journey[i].done=!u.journey[i].done;title=u.journey[i].title;
+    allDone=u.journey.every(m=>m.done)});
+  renderJourney();
+  if(allDone){lumaSay('That\u2019s your whole journey complete — genuinely well done. Time to level up: retake your baseline to measure the gain, or join a Quest and turn learning into proof.')}
+}
+
+/* ============================================================
+   COACH LUMA — scripted demo brain + browser voice
+   ============================================================ */
+let voiceOn=false, lumaOpened=false, greeted=false;
+function lumaVisibility(view){
+  const inMembers=view==='dashboard'&&getSession();
+  document.getElementById('luma-fab').classList.toggle('show',!!inMembers&&!document.getElementById('luma-dock').classList.contains('open'));
+  if(!inMembers)closeLuma();
+}
+function openLuma(){
+  document.getElementById('luma-dock').classList.add('open');
+  document.getElementById('luma-fab').classList.remove('show');
+  if(!lumaOpened){lumaOpened=true;if(!greeted)lumaGreet(false)}
+  renderChips();
+}
+function closeLuma(){
+  document.getElementById('luma-dock').classList.remove('open');
+  if(getSession()&&document.getElementById('view-dashboard').classList.contains('active'))
+    document.getElementById('luma-fab').classList.add('show');
+}
+function lumaMsg(text,who){
+  const box=document.getElementById('luma-msgs');
+  const div=document.createElement('div');div.className='lm '+who;div.textContent=text;
+  box.appendChild(div);box.scrollTop=box.scrollHeight;
+}
+function lumaSay(text){
+  if(!document.getElementById('luma-dock').classList.contains('open'))openLuma();
+  lumaMsg(text,'luma');speak(text);
+}
+function lumaGreet(isNew){
+  greeted=true;
+  const u=currentUser();if(!u)return;
+  const first=u.name.split(' ')[0],t=TIERS[tierOf(u)];
+  const msg=isNew
+    ?'Welcome to WaiMore, '+first+'! I\u2019m Coach Luma — I\u2019m here on every page to help you find your way. My honest advice for minute one: take your two-minute baseline so everything here personalizes to you. Want me to take you there?'
+    :'Welcome back, '+first+'. You\u2019re a '+t.short+' member'+(u.assessment?' at '+u.assessment.level+' level':'')+'. Ask me anything — where to engage, which Quest fits you, or what to learn next.';
+  setTimeout(()=>lumaSay(msg),600);
+}
+function renderChips(){
+  const chips=[['Where should I start?','start'],['Which Quest fits me?','quest'],['Baseline me','assess'],['What\u2019s my next lesson?','journey'],['Explain the tiers','tiers']];
+  document.getElementById('luma-chips').innerHTML=chips.map(c=>
+    '<button class="luma-chip" onclick="chipLuma(\''+c[1]+'\')">'+c[0]+'</button>').join('');
+}
+function chipLuma(key){
+  const map={start:'Where should I start?',quest:'Which quest fits me?',assess:'Baseline me',journey:'What\u2019s my next lesson?',tiers:'Explain the tiers'};
+  lumaMsg(map[key],'user');
+  setTimeout(()=>lumaReply(map[key]),350);
+}
+function sendLuma(){
+  const inp=document.getElementById('luma-text');
+  const text=inp.value.trim();if(!text)return;
+  inp.value='';lumaMsg(text,'user');
+  setTimeout(()=>lumaReply(text),400);
+}
+/* Scripted routing — swap this function for a fetch() to the
+   s4-luma-brain Cloudflare Worker to make Luma truly live. */
+function lumaReply(text){
+  const u=currentUser();if(!u)return;
+  const first=u.name.split(' ')[0],tier=tierOf(u),t=TIERS[tier],q=text.toLowerCase();
+  let r;
+  if(/(start|begin|new here|first|lost)/.test(q)){
+    r=u.assessment
+      ?'You\u2019ve done your baseline, so the fastest path is My Journey — your next micro-learning is queued. After that, the introductions thread is a great two-minute win.'
+      :'Start with your baseline, '+first+' — six questions, two minutes. It sets your level and builds your personal journey. I\u2019ll take you: it\u2019s under My Baseline.';
+  } else if(/(quest|challenge|build|team|project)/.test(q)){
+    r=TIERS[tier].rank>=2
+      ?'For your first Quest I\u2019d pick \u201cMeeting minutes → action items\u201d — it\u2019s mid-build, the team is welcoming, and shipping it earns your Practitioner badge. It\u2019s on the Quests page.'
+      :'Quests are where Builders live. On your current '+t.short+' plan you can watch every Quest and read the shipped outputs — joining a team unlocks with Builder, and I think you\u2019d thrive there.';
+  } else if(/(baseline|assess|score|level|test)/.test(q)){
+    r=u.assessment
+      ?'Your baseline: '+u.assessment.score+'/18, level '+u.assessment.level+', focus on '+DIM_LABEL[u.assessment.focus[0]]+' and '+DIM_LABEL[u.assessment.focus[1]]+'. Retake it anytime under My Baseline and your journey re-personalizes.'
+      :'Let\u2019s do it — head to My Baseline and hit Start. Two minutes, and answer honestly: the journey I build for you is only as good as your answers.';
+  } else if(/(lesson|learn|journey|module|course|micro)/.test(q)){
+    r=u.journey
+      ?(u.journey.find(m=>!m.done)?'Next up: \u201c'+u.journey.find(m=>!m.done).title+'\u201d — '+u.journey.find(m=>!m.done).mins+'. It\u2019s waiting in My Journey.':'You\u2019ve finished your whole journey! Retake your baseline to measure growth, or turn learning into proof on a Quest.')
+      :'I build your journey from your baseline — take that first (My Baseline tab) and your personalized micro-learnings appear in My Journey.';
+  } else if(/(tier|price|cost|upgrade|plan|subscription)/.test(q)){
+    r='You\u2019re on '+t.name+'. The ladder: Free to belong, Navigator ($9.95 founding) for full reports and my guided micro-learnings, Builder ($39) to join Quest teams, Advisor Circle ($99) to steer what gets built with priority access to S4 partners. Every level up opens real rooms — you saw the locked ones.';
+  } else if(/(idea|problem|submit|suggest)/.test(q)){
+    r='Bring it to the Idea Box — one line is enough. The community votes, Advisors select, and if yours becomes a Quest you get a seat on the build. Your problem is literally the product here.';
+  } else if(/(voice|speak|talk|hear)/.test(q)){
+    r='Tap the Voice button at the top of my panel and I\u2019ll speak my answers out loud. The mic button lets you talk to me instead of typing, in browsers that support it.';
+  } else if(/(hello|hi |hey|thanks|thank)/.test(q)){
+    r='Anytime, '+first+'! That\u2019s what I\u2019m here for. Where do you want to go next — Quests, your Journey, or a good discussion?';
+  } else {
+    r='Good question. In this demo I\u2019m running on a scripted brain, so my range is limited — the live me answers anything. What I can do right now: guide you to your baseline, your journey, the right Quest, or the right tier. Which sounds useful?';
+  }
+  lumaSay(r);
+}
+
+/* ---------- voice: Web Speech API ---------- */
+function toggleVoice(){
+  voiceOn=!voiceOn;
+  document.getElementById('luma-voice').classList.toggle('on',voiceOn);
+  if(voiceOn){speak('Voice is on. I\u2019ll speak my answers from now on.')}
+  else if(window.speechSynthesis){speechSynthesis.cancel()}
+}
+function speak(text){
+  if(!voiceOn||!window.speechSynthesis)return;
+  speechSynthesis.cancel();
+  const utt=new SpeechSynthesisUtterance(text.replace(/™/g,''));
+  const voices=speechSynthesis.getVoices();
+  const pick=voices.find(v=>/Google US English|Samantha|Zira|Female/i.test(v.name))||voices.find(v=>v.lang.startsWith('en'));
+  if(pick)utt.voice=pick;
+  utt.rate=1.02;utt.pitch=1.05;
+  speechSynthesis.speak(utt);
+}
+if(window.speechSynthesis)speechSynthesis.onvoiceschanged=()=>{};
+
+/* ---------- mic input where supported ---------- */
+let recog=null;
+function micLuma(){
+  const SR=window.SpeechRecognition||window.webkitSpeechRecognition;
+  if(!SR){toast('Voice input isn\u2019t supported in this browser — Chrome works best.');return}
+  const btn=document.getElementById('luma-mic');
+  if(recog){recog.stop();return}
+  recog=new SR();recog.lang='en-US';recog.interimResults=false;
+  btn.classList.add('listening');
+  recog.onresult=e=>{document.getElementById('luma-text').value=e.results[0][0].transcript;sendLuma()};
+  recog.onend=()=>{btn.classList.remove('listening');recog=null};
+  recog.onerror=()=>{btn.classList.remove('listening');recog=null};
+  recog.start();
 }
 
 /* ---------- demo reset ---------- */
 function resetDemo(){
-  if (!confirm('Reset all demo data? This deletes every demo account in this browser.')) return;
-  localStorage.removeItem(USERS_KEY);
-  localStorage.removeItem(SESSION_KEY);
-  pendingUser = null; pendingUpgrade = null;
-  go('landing');
-  toast('Demo data cleared.');
+  if(!confirm('Reset all demo data? This deletes every demo account in this browser.'))return;
+  [USERS_KEY,SESSION_KEY,IDEAS_KEY,ACT_KEY].forEach(k=>localStorage.removeItem(k));
+  pendingUser=null;pendingUpgrade=null;assessState=null;greeted=false;lumaOpened=false;
+  document.getElementById('luma-msgs').innerHTML='';
+  closeLuma();document.getElementById('luma-fab').classList.remove('show');
+  go('landing');toast('Demo data cleared.');
 }
 
 /* ---------- boot ---------- */
 (function init(){
-  showTier('builder'); // explorer opens on the most active tier
-  if (getSession()){ enterDashboard(); } else { go('landing'); }
+  showTier('builder');
+  if(getSession()){enterDashboard()}else{go('landing')}
 })();
 </script>
 </body>
